@@ -1,0 +1,15 @@
+
+/*
+ * phone: 640px - 
+ * phone-2x: 768px - any device that requests close to 768px and 2x 375px mobile screens.
+ * tablet-portrain-min: tp
+ * tablet-landscape-min: tl
+ * desktop-min: dl
+ * big-desktop-min: bd
+ */
+$breakpoints: (phones: 640px,
+               phones-2x: 768px,
+               desktop-old: 1024px,
+               desktop: 1366px,
+               tablets: 1600px,
+               full-hd: 1920px) !default;

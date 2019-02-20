@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(.9375);
+	line-height: $font__line-height-body;
+}
+
+@import "headings";
+
+@import "copy";
+
+@import "footer";

@@ -1,0 +1,27 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+
+  .site-branding {
+    padding: 25px 0 0 40px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .top-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .search-form {
+      margin-right: 1em;
+    }
+  }
+}

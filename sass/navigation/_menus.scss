@@ -1,0 +1,140 @@
+.main-navigation {
+  border-bottom: 1px solid #ccc;
+  background-color: rgba(240, 240, 240, 0.8);
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+    display: inline-block;
+    padding: 0 1em;
+
+		&:hover > a,
+		&.focus > a {
+      color: $color__links_link_hover;
+		}
+	}
+
+	a {
+    color: $color__links_link;
+		text-decoration: none;
+    transition: all .5s ease;
+    line-height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+    color: $color__links_link_current;
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+
+/* Text menu */
+.site-footer {
+  .menu {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: $color__text-links_link;
+      text-decoration: none;
+      transition: all .5s ease;
+      line-height: 3em;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $color__text-links_link_hover;
+      }
+    }
+
+    li {
+      display: inline-block;
+      padding: 0 1em;
+    }
+  }
+}

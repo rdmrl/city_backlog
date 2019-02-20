@@ -1,0 +1,20 @@
+
+/* The styles for the content of a single idea. */
+.idea {
+  background-color: #fff;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: [header] auto [description] auto [numbers] auto [buttons] auto [rows-end];
+  grid-template-columns: [image] 1fr [content] 2.5fr [cols-end];
+  padding: 20px;
+
+  img {
+    grid-row: header / rows-end;
+    grid-column: image;
+  }
+
+  header {
+    grid-row: header / description;
+    grid-column: content / cols-end;
+  }
+}

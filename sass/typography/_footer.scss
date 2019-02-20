@@ -1,0 +1,15 @@
+.site-info {
+  .menu {
+    a {
+      font-family: $font__menu;
+      font-size: .8em;
+      font-weight: bold;
+    }
+  }
+}
+
+.copyright {
+  font-size: .8em;
+  line-height: 3em;
+  color: $color__text-secondary;
+}

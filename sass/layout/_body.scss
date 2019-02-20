@@ -1,0 +1,25 @@
+/* Body background styles */
+
+body {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #f2f6f9;
+  background-size: contain;
+
+  @include media(">=tablets") {
+    background-image: url(../img/bg/cb_bg_1600w.png);
+    background-size: cover;
+  }
+  @include media("<=tablets") {
+    background-image: url(../img/bg/cb_bg_1366w.png);
+  }
+  @include media("<=desktop-old") {
+    background-image: url(../img/bg/cb_bg_1024w.png);
+  }
+  @include media("<=phones-2x") {
+    background-image: url(../img/bg/cb_bg_768w.png);
+  }
+  @include media("<=phones") {
+    background-image: url(../img/bg/cb_bg_640w.png);
+  }
+}
