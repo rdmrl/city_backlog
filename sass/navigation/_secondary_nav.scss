@@ -1,0 +1,30 @@
+
+.secondary-nav {
+  padding: 0 45px 1em 105px;
+  
+  a {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: #d6f0f2;
+    font-weight: 800;
+    font-size: 16px;
+
+    border-radius: 1.1em;
+
+    margin: 0 0 .75em;
+
+    padding: .2em .75em .15em .65em;
+
+    img {
+      display: inline-block;
+      margin-right: 9px;
+    }
+  }
+
+  a:hover, a.active {
+    background-color: #67c7ce;
+    color: #fff;
+  }
+}
