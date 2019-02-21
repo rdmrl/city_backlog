@@ -4,11 +4,13 @@
   border-radius: 16px;
   margin: 1em 117px 1em 0;
   background-color: #fff;
+  box-shadow: 8px 8px 30px 10px rgba(200, 215, 232, 0.7);
   display: grid;
   grid-gap: 1em;
   grid-template-rows: [header] auto [description] auto [numbers] auto [buttons] auto [rows-end];
-  grid-template-columns: [image] 1fr [content] 2.5fr [cols-end];
+  grid-template-columns: [image] 1fr [content] 1.8fr [cols-end];
   padding: 2em;
+  margin-bottom: 80px;
 
   .idea-img {
     grid-row: header / rows-end;
