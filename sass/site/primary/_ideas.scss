@@ -1,6 +1,9 @@
 
 /* The styles for the content of a single idea. */
 .idea {
+  border-radius: 24px;
+  width: 60%;
+  margin: 1em auto;
   background-color: #fff;
   display: grid;
   grid-gap: 1em;
@@ -16,5 +19,91 @@
   header {
     grid-row: header / description;
     grid-column: content / cols-end;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    h3 {
+      color: #000;
+      font-size: 1.6em;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .idea-type {
+      color: #aaa;
+      font-size: .9em;
+    }
+
+    .action-vetted {
+      img {
+        display: none;
+      }
+    }
   }
+
+  .description {
+    padding-right: 20%;
+  }
+
+  .numbers {
+    display: flex;
+
+    .circle {
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      padding: 1em;
+      margin-right: 1.5em;
+
+      strong {
+        font-size: 2em;
+        line-height: 1.2em;
+        font-weight: 800;
+        display: block;
+      }
+
+      span {
+        display: inline-block;
+        font-size: .6em;
+        text-transform: uppercase;
+      }
+    }
+
+    .details {
+      margin-top: 0;
+
+      dt {
+        color: #aaa;
+        font-size: .7em;
+        font-weight: 700;
+        line-height: 100%;
+      }
+
+      dd {
+        color: #333;
+        margin: 0 0 .5em;
+        font-size: .9em;
+        font-weight: 500;
+      }
+    }
+  } 
+}
+
+.button {
+  border: 0;
+  border-radius: 1.5em;
+  box-shadow: 3px 3px 12px 4px rgba(240, 240, 240, 0.9);
+  font-size: 1.1em;
+  font-weight: 800;
+  margin-right: 1em;
+  padding: .6em 2em;
+}
+
+.action-pledge {
+  color: #fff;
+  background-color: #9cf3cc;
 }
