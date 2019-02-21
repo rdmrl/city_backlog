@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Set this to the main language of your site -->
+<html lang="en">
 <head>
     <meta charset="utf-8">
 
-    <title>HTML5 Bones :: PAGE TITLE</title>
+    <title>City Backlog - Ideas</title>
 
-    <!-- Enter a brief description of your page -->
     <meta name="description" content="">
 
-    <!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width,
-    and setting the initial page zoom level to be 1 (initial-scale=1.0), and fixing width=device-width for iOS9 (shtink-to-fit=no) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <!-- Include the site stylesheet -->
     <link href="css/style.css" rel="stylesheet" media="all">
 
     <!-- Include the HTML5 shiv print polyfill for Internet Explorer browsers 8 and below -->
@@ -20,8 +16,6 @@
 </head>
 <body>
 
-    <!-- The page header typically contains items such as your site heading, logo and possibly the main site navigation -->
-    <!-- ARIA: the landmark role "banner" is set as it is the prime heading or internal title of the page -->
     <header role="banner" class="site-header">
 
         <div class="site-branding">
@@ -43,136 +37,153 @@
 
         <aside role="complementary" class="nav-sidebar">
           <nav role="navigation" class="secondary-nav">
-            <a href="#"><img src="img/nav/s_dash.png" alt="Dashboard"> Dashboard </a>
-            <a href="#"><img src="img/nav/s_ideas.png" alt="Dashboard"> Ideas </a>
-            <a href="#"><img src="img/nav/s_team.png" alt="Dashboard"> Team </a>
-            <a href="#"><img src="img/nav/s_particants.png" alt="Dashboard"> Participants </a>
+            <a href="#"><img src="img/nav/s_dashboard.png" alt="Dashboard"> Dashboard </a>
+            <a class="active" href="#"><img src="img/nav/s_ideas.png" alt="Ideas"> Ideas </a>
+            <a href="#"><img src="img/nav/s_team.png" alt="Team"> Team </a>
+            <a href="#"><img src="img/nav/s_participants.png" alt="Participants"> Participants </a>
           </nav>
+        </aside>
+
+        <aside role="complementary" class="search-bar">
+          <div class="search-container">
+            <input type="text" class="search-field" placeholder="Search teams" name="search">
+            <img class="search-button" src="img/ico/search.png" alt="Go" />
+          </div>
+
+          <button class="button action-submit-idea">Submit an Idea</button>
+
+          <button class="button button-clear action-map-view">Map View</button>
+
+          <button class="button button-clear action-date">Date &or;</button>
+          <button class="button button-clear action-filter"><img src="img/ico/filter.png" /> Filter &or;</button>
         </aside>
 
         <main role="main">
 
-<section class="idea">
+          <header>
+            <h1>Ideas</h1>
+            <p class="heading-text">Solve your city's problem by giving your time or money. <strong>Learn more!</strong></p>
+          </header>
 
-  <img class="idea-img" src="img/misc/img_idea.jpg" alt="Idea" />
+            <section class="idea">
 
-  <header>
-    <h3>Baltimore Smart City Challenge <span class="header-dot">&#183;</span> <span class="idea-type">Design</span></h3>
-    <button class="button action-vetted"><img src="img/ico/vetted.png"> Vetted</button>
-  </header>
+              <img class="idea-img" src="img/misc/img_idea.jpg" alt="Idea" />
 
-  <div class="description">
-    <p>Lorem ipsum dolor sit amet, conseaaactetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse</p>
-  </div>
+              <header>
+                <h3>Baltimore Smart City Challenge <span class="header-dot">&#183;</span> <span class="idea-type">Design</span></h3>
+                <button class="button action-vetted"><img src="img/ico/vetted.png"> Vetted</button>
+              </header>
 
-  <div class="numbers">
+              <div class="description">
+                <p>Lorem ipsum dolor sit amet, conseaaactetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse</p>
+              </div>
 
-    <div class="circle numbers-impacted">
-      <strong>600</strong>
-      <span>Citizens Impacted</span>
-    </div>
+              <div class="numbers">
 
-    <div class="circle numbers-pledged">
-      <strong>$5K</strong>
-      <span>Crowdfunding Pledged</span>
-    </div>
+                <div class="circle numbers-impacted">
+                  <strong>600</strong>
+                  <span>Citizens Impacted</span>
+                </div>
 
-    <div class="circle numbers-competing">
-      <strong>10</strong>
-      <span>Teams Competing</span>
-    </div>
+                <div class="circle numbers-pledged">
+                  <strong>$5K</strong>
+                  <span>Crowdfunding Pledged</span>
+                </div>
 
-    <div class="separator"></div>
+                <div class="circle numbers-competing">
+                  <strong>10</strong>
+                  <span>Teams Competing</span>
+                </div>
 
-    <div class="map-img">
-      <img src="img/misc/img_map.png" width="43" height="48" alt="Baltimore Map icon" />
-    </div>
+                <div class="separator"></div>
 
-    <dl class="details">
-      <dt>Organization</dt>
-      <dd>Baltimore Corp</dd>
+                <div class="map-img">
+                  <img src="img/misc/img_map.png" width="43" height="48" alt="Baltimore Map icon" />
+                </div>
 
-      <dt>Champion</dt>
-      <dd>Domanin Studio</dd>
+                <dl class="details">
+                  <dt>Organization</dt>
+                  <dd>Baltimore Corp</dd>
 
-      <dt>Neighbourhood</dt>
-      <dd>Charles</dd>
-    </dl>
+                  <dt>Champion</dt>
+                  <dd>Domanin Studio</dd>
 
-  </div>
+                  <dt>Neighbourhood</dt>
+                  <dd>Charles</dd>
+                </dl>
 
-  <div class="actions">
-    <button class="button button-shadow action-pledge">Pledge</button>
-    <button class="button button-shadow action-compete">Compete</button>
-    <button class="button action-view">View</button>
-  </div>
+              </div>
 
-</section>
+              <div class="actions">
+                <button class="button button-shadow action-pledge">Pledge</button>
+                <button class="button button-shadow action-compete">Compete</button>
+                <button class="button action-view">View</button>
+              </div>
 
+            </section>
 
-            <!-- The <section> element can be used to enclose content that comes under a related heading.
-            NOTE: The <section> element can contain <article> elements and vice versa, if you think the content warrants it. -->
-            <section>
+            <section class="idea">
 
-                <!-- This is the section's header. It contains the heading and navigation links for within the section -->
-                <header>
-                    <h2>Getting Started</h2>
-                    <!-- ARIA: the landmark role "navigation" is added here as the element contains page navigation -->
-                    <nav role="navigation">
-                        <ul>
-                            <li><a href="#introduction">Introduction</a></li>
-                            <li><a href="#instructions">Instructions</a></li>
-                        </ul>
-                    </nav>
-                </header>
+              <img class="idea-img" src="img/misc/img_idea.jpg" alt="Idea" />
 
-                <!-- The <article> element can be used to enclose content that still makes sense on its own and is therefore "reusable" -->
-                <article id="introduction">
+              <header>
+                <h3>Baltimore Smart City Challenge <span class="header-dot">&#183;</span> <span class="idea-type">Design</span></h3>
+                <button class="button action-vetted"><img src="img/ico/vetted.png"> Vetted</button>
+              </header>
 
-                    <!-- A <header> element is not required here as the heading only contains a single <h3> element -->
-                    <h3>Introduction</h3>
+              <div class="description">
+                <p>Lorem ipsum dolor sit amet, conseaaactetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse</p>
+              </div>
 
-                    <!-- Content -->
-                    <p>Welcome to <abbr title="HyperText Markup Language 5">HTML5</abbr> Bones. This is a template that contains comments to aid you with setting up your <abbr title="HyperText Markup Language 5">HTML5</abbr> document.</p>
+              <div class="numbers">
 
-                </article>
+                <div class="circle numbers-impacted">
+                  <strong>600</strong>
+                  <span>Citizens Impacted</span>
+                </div>
 
-                <!-- The <article> element can be used to enclose content that still makes sense on its own and is therefore "reusable" -->
-                <article id="instructions">
+                <div class="circle numbers-pledged">
+                  <strong>$5K</strong>
+                  <span>Crowdfunding Pledged</span>
+                </div>
 
-                    <!-- A <header> element is not required here as the heading only contains a single <h3> element -->
-                    <h3>Instructions</h3>
+                <div class="circle numbers-competing">
+                  <strong>10</strong>
+                  <span>Teams Competing</span>
+                </div>
 
-                    <!-- Content -->
-                    <ol>
-                        <li>Read the comments in this template</li>
-                        <li>Decide how you think your content may fit into the template</li>
-                        <li>Start building your document</li>
-                    </ol>
+                <div class="separator"></div>
 
-                </article>
+                <div class="map-img">
+                  <img src="img/misc/img_map.png" width="43" height="48" alt="Baltimore Map icon" />
+                </div>
+
+                <dl class="details">
+                  <dt>Organization</dt>
+                  <dd>Baltimore Corp</dd>
+
+                  <dt>Champion</dt>
+                  <dd>Domanin Studio</dd>
+
+                  <dt>Neighbourhood</dt>
+                  <dd>Charles</dd>
+                </dl>
+
+              </div>
+
+              <div class="actions">
+                <button class="button button-shadow action-pledge">Pledge</button>
+                <button class="button button-shadow action-compete">Compete</button>
+                <button class="button action-view">View</button>
+              </div>
 
             </section>
 
         </main>
 
-
     </div>
-
-    <!-- The main page footer can contain items such as copyright and contact information. It can also contain a duplicated navigation of your site which is not usually contained within a <nav> -->
-    <!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
-    <footer role="contentinfo">
-
-        <!-- The <address> element contains contact information for the nearest <article> or <body> element. This example is for the <body> -->
-        <address>
-          <p>For further information, please contact <a href="mailto:admin@example.com">Max Mustermann</a>.</p>
-        </address>
-
-        <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2018' is a date -->
-        <small>Copyright &copy; <time>2018</time></small>
-
-    </footer>
 
 </body>
 </html>
