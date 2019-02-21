@@ -29,9 +29,7 @@
         </div>
 
 
-        <!-- ARIA: the landmark role "navigation" is added here as the element contains site navigation
-        NOTE: The <nav> element does not have to be contained within a <header> element, even though the two examples on this page are. -->
-        <nav role="navigation" class="top-navigation">
+        <nav role="navigation" class="primary-nav">
             <a href="#" class="nav-ideas"><img src="img/nav/n_discuss.png" alt="Discussion" /></a>
             <a href="#" class="nav-ideas"><img src="img/nav/n_notif.png" alt="Notifications" /></a>
             <a href="#" class="nav-ideas"><img src="img/nav/n_help.png" alt="Help" /></a>
@@ -43,18 +41,24 @@
 
     <div class="wrapper">
 
-        <!-- The <main> element is used to enclose the main content, i.e. that which contains the central topic of a document -->
-        <!-- ARIA: the landmark role "main" is added here as it contains the main content of the document, and it is recommended to add it to the
-        <main> element until user agents implement the required role mapping. -->
+        <aside role="complementary" class="nav-sidebar">
+          <nav role="navigation" class="secondary-nav">
+            <a href="#"><img src="img/nav/s_dash.png" alt="Dashboard"> Dashboard </a>
+            <a href="#"><img src="img/nav/s_ideas.png" alt="Dashboard"> Ideas </a>
+            <a href="#"><img src="img/nav/s_team.png" alt="Dashboard"> Team </a>
+            <a href="#"><img src="img/nav/s_particants.png" alt="Dashboard"> Participants </a>
+          </nav>
+        </aside>
+
         <main role="main">
 
 <section class="idea">
 
-  <img src="img/misc/img_idea.jpg" alt="Idea" />
+  <img class="idea-img" src="img/misc/img_idea.jpg" alt="Idea" />
 
   <header>
-    <h3>Baltimore Smart City Challenge <span class="idea-type">&#183; Design</span></h3>
-    <button class="button-action-vetted"><img src="img/ico/vetted.png"> Vetted</button>
+    <h3>Baltimore Smart City Challenge <span class="header-dot">&#183;</span> <span class="idea-type">Design</span></h3>
+    <button class="button action-vetted"><img src="img/ico/vetted.png"> Vetted</button>
   </header>
 
   <div class="description">
@@ -64,17 +68,44 @@
 
   <div class="numbers">
 
-    <div class="citizens-impacted">
+    <div class="circle numbers-impacted">
       <strong>600</strong>
       <span>Citizens Impacted</span>
     </div>
 
+    <div class="circle numbers-pledged">
+      <strong>$5K</strong>
+      <span>Crowdfunding Pledged</span>
+    </div>
+
+    <div class="circle numbers-competing">
+      <strong>10</strong>
+      <span>Teams Competing</span>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="map-img">
+      <img src="img/misc/img_map.png" width="43" height="48" alt="Baltimore Map icon" />
+    </div>
+
+    <dl class="details">
+      <dt>Organization</dt>
+      <dd>Baltimore Corp</dd>
+
+      <dt>Champion</dt>
+      <dd>Domanin Studio</dd>
+
+      <dt>Neighbourhood</dt>
+      <dd>Charles</dd>
+    </dl>
+
   </div>
 
   <div class="actions">
-    <button class="button-action-pledge">Pledge</button>
-    <button class="button-action-compete">Compete</button>
-    <button class="button-action-view">View</button>
+    <button class="button button-shadow action-pledge">Pledge</button>
+    <button class="button button-shadow action-compete">Compete</button>
+    <button class="button action-view">View</button>
   </div>
 
 </section>
@@ -126,19 +157,6 @@
 
         </main>
 
-        <!-- An <aside> is used to enclose content that is additional to the main content but not essential. If it were removed, the meaning of the main content should not be lost, but the content of the <aside> also retains its meaning.
-        NOTE: the aside is placed outside of the <main> element as while its content is related to the content that is within the <main>
-        element, it is not part of it -->
-        <!-- ARIA: the landmark role "complementary" is added here as it contains supporting information for the main content that remains meaningful even when separated from it -->
-        <aside role="complementary">
-
-            <!-- A <header> element is not required here as the heading only contains a single <h3> element -->
-            <h3>Did you know?</h3>
-
-            <!-- Content -->
-            <p>The article and section elements cause a lot of confusion when people are trying to decide how and when to use them. The article: <a href="http://www.iandevlin.com/blog/2011/04/html5/html5-section-or-article">section or article?</a> might help you choose.</p>
-
-        </aside>
 
     </div>
 
