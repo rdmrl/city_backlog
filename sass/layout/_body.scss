@@ -8,7 +8,6 @@ body {
 
   @include media(">=tablets") {
     background-image: url(../img/bg/cb_bg_1600w.png);
-    background-size: cover;
   }
   @include media("<=tablets") {
     background-image: url(../img/bg/cb_bg_1366w.png);
@@ -23,3 +22,30 @@ body {
     background-image: url(../img/bg/cb_bg_640w.png);
   }
 }
+
+.wrapper {
+  display: grid;
+
+  grid-template-rows: [searchbar] auto [content] auto [rows-end];
+  grid-template-columns: [sidebar] 21% [content] 79% [cols-end];
+
+  .nav-sidebar {
+    grid-row: searchbar / rows-end;
+    grid-column: sidebar;
+  }
+
+  .search-bar {
+    grid-row: searchbar / content;
+    grid-column: content;
+  }
+
+  main {
+    grid-row: content / rows-end;
+    grid-column: content;
+
+    > header {
+      margin-bottom: 40px;
+    }
+  }
+}
+
