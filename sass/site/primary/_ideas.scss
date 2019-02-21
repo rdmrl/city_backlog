@@ -1,33 +1,7 @@
 
-.wrapper {
-  display: grid;
-
-  grid-template-rows: auto;
-  grid-template-columns: [sidebar] 20% [content] 80% [cols-end];
-
-  .nav-sidebar {
-    grid-column: sidebar;
-  }
-
-  main {
-    grid-column: content;
-  }
-}
-
-.nav-sidebar {
-  a {
-    display: block;
-    text-decoration: none;
-  }
-}
-
-main {
-  margin-top: 270px;
-}
-
 /* The styles for the content of a single idea. */
 .idea {
-  border-radius: 24px;
+  border-radius: 16px;
   margin: 1em 117px 1em 0;
   background-color: #fff;
   display: grid;
