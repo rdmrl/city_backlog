@@ -11,6 +11,10 @@ a {
 	}
 	&:focus {
 		outline: thin dotted;
+  }
+
+  img {
+    outline: 0;
 	}
 	&:hover,
 	&:active {
