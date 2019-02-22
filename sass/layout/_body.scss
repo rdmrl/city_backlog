@@ -42,9 +42,11 @@ body {
   main {
     grid-row: content / rows-end;
     grid-column: content;
+    padding-right: 112px;
+    padding-left: 5px;
 
     > header {
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
   }
 }
