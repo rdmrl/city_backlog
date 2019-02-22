@@ -13,10 +13,10 @@
     background-color: #68c8ce;
     border-radius: 1.8em;
     padding: .4em .8em .4em 1.7em;
-    box-shadow: 2px 4px 8px 6px rgba(53, 164, 171, 0.6);
+    box-shadow: 0 0 28px 0 rgba(43, 154, 161, 0.9);
 
-    flex-basis: 37.5%;
-    margin-right: 3.5em;
+    flex-basis: 36.5%;
+    margin-right: 3em;
 
     .search-field {
       background: transparent;
@@ -65,11 +65,15 @@
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    flex-basis: 9%;
+    flex-basis: 8%;
     background-color: transparent;
     color: #fff;
     font-size: 1em;
     font-weight: 500;
+
+    .filter-caret {
+      margin-left: 5px;
+    }
   }
 }
 
