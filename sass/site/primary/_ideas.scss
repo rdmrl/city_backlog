@@ -2,14 +2,15 @@
 /* The styles for the content of a single idea. */
 .idea {
   border-radius: 16px;
-  margin: 1em 117px 1em 0;
   background-color: #fff;
-  box-shadow: 8px 8px 30px 10px rgba(200, 215, 232, 0.7);
+  /* box-shadow: 8px 8px 30px 10px rgba(200, 215, 232, 0.7); */
+
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 0;
   grid-template-rows: [header] auto [description] auto [numbers] auto [buttons] auto [rows-end];
-  grid-template-columns: [image] 1fr [content] 1.8fr [cols-end];
-  padding: 2em;
+  grid-template-columns: [image] 1fr [content] 1.6fr [cols-end];
+
+  padding: 2.3em 2.2em 2.4em 1.5em;
   margin-bottom: 80px;
 
   .idea-img {
@@ -28,63 +29,73 @@
     h3 {
       color: #000;
       font-size: 1.6em;
-      font-weight: 800;
+      font-weight: 600;
+      letter-spacing: 0;
       margin: 0;
     }
 
     .header-dot {
       color: #dad7f0;
       display: inline-block;
+      font-weight: 600;
       margin: 0 5px;
     }
 
     .idea-type {
       color: #c2c2c2;
       font-size: .7em;
+      font-weight: 600;
     }
 
     .action-vetted {
       background-color: #eff1f3;
       color: #205759;
       font-size: 1.2em;
-      padding: .5em 2.5em .5em 2em;
+      font-weight: 600;
+      padding: .3em 2.3em .6em 1.8em;
+      line-height: 100%;
       margin-right: 0;
 
       img {
         display: inline-block;
-        margin-right: 2px;
+        margin-right: 0px;
       }
     }
   }
 
   .description {
+    margin-top: .75em;
     padding-right: 20%;
 
     p {
       color: #989898;
-      font-size: .95em;
+      font-size: .9em;
+      font-weight: 400;
     }
   }
 
   .numbers {
     display: flex;
     align-items: center;
+    padding-left: 3px;
+    padding-top: 8px;
 
     .circle {
       border: 1px solid #e0e5e9;
       border-radius: 50%;
-      width: 7.5em;
-      height: 7.5em;
+      width: 7.4em;
+      height: 7.3em;
       text-align: center;
-      padding: 1em;
+      padding: .8em 1em .9em;
       margin-right: 1.6em;
 
       strong {
-        font-size: 2em;
+        font-size: 1.9em;
         line-height: 1.2em;
-        font-weight: 800;
+        font-weight: 700;
         display: block;
-        margin-top: .2em;
+        margin-top: .15em;
+        margin-bottom: .1em;
       }
 
       span {
@@ -98,7 +109,7 @@
     .separator {
       border: 2px solid #e0e6e6;
       border-width: 0 0 0 1px;
-      height: 7em;
+      height: 5em;
       margin-right: 1.6em;
     }
 
@@ -107,22 +118,30 @@
     }
 
     .details {
+      padding-left: 5px;
 
       dt {
-        color: #aaa;
-        font-size: .7em;
-        font-weight: 700;
+        color: #c2c2c2;
+        font-size: .8em;
+        font-weight: 600;
         line-height: 100%;
+        letter-spacing: 0;
       }
 
       dd {
-        color: #333;
+        color: #474747;
         margin: 0 0 .4em;
         font-size: .9em;
-        font-weight: 500;
+        font-weight: 400;
+        letter-spacing: 0;
       }
     }
   } 
+
+  .actions {
+    margin-top: .75em;
+    padding-left: 9px;
+  }
 }
 
 .numbers-impacted {
@@ -148,10 +167,9 @@
   border: 0;
   border-radius: 1.5em;
   font-size: 1em;
-  line-height: 1em;
-  font-weight: 800;
-  margin-right: 1.2em;
-  padding: .6em 2.5em .7em 2.5em;
+  font-weight: 600;
+  margin-right: 1.3em;
+  padding: .5em 2.3em .8em;
 }
 
 .button-shadow {
@@ -168,10 +186,12 @@
   color: #fff;
   background-color: #2d5759;
   border: 2px solid #2d5759;
+  padding: .5em 1.8em .8em;
 }
 
 .action-view {
   background-color: #fff;
   border: 2px solid #9cb4b5;
   color: #9cb4b5;
+  padding: .5em 2.8em .8em;
 }
