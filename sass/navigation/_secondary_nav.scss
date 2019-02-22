@@ -1,24 +1,26 @@
 
 .secondary-nav {
-  padding: 0 45px 1em 105px;
+  padding: 0 55px 1em 105px;
   
   a {
     display: flex;
     align-items: center;
 
-    text-decoration: none;
-    color: #d6f0f2;
-    font-weight: 800;
-    font-size: 16px;
-
     border-radius: 1.1em;
 
-    margin: 0 0 .75em;
+    color: #d6f0f2;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
 
-    padding: .2em .75em .15em .65em;
+    margin: 0 0 .75em;
+    padding: 0em .55em .3em .65em;
+
+    text-decoration: none;
 
     img {
       display: inline-block;
+      margin-top: 3px;
       margin-right: 9px;
     }
   }
