@@ -24,22 +24,22 @@
 
 
         <nav role="navigation" class="primary-nav">
-            <a href="#" class="nav-ideas"><img src="img/nav/n_discuss.png" alt="Discussion" /></a>
-            <a href="#" class="nav-ideas"><img src="img/nav/n_notif.png" alt="Notifications" /></a>
-            <a href="#" class="nav-ideas"><img src="img/nav/n_help.png" alt="Help" /></a>
+            <a href="#" class="nav-discussion"><img src="img/nav/n_discuss.png" alt="Discussion" /></a>
+            <a href="#" class="nav-notifications"><img src="img/nav/n_notif.png" alt="Notifications" /></a>
+            <a href="#" class="nav-help"><img src="img/nav/n_help.png" alt="Help" /></a>
             <a href="#"><img src="img/nav/n_sep.png" width="5" alt="|">
-            <a href="#" class="nav-ideas"><img src="img/nav/n_ideas.png" alt="Ideas" /></a>
+            <a href="#" class="nav-profile"><img src="img/nav/n_profile.png" alt="Profile" /></a>
         </nav>
 
     </header>
 
-    <div class="wrapper">
+    <div id="page" class="wrapper">
 
         <aside role="complementary" class="nav-sidebar">
           <nav role="navigation" class="secondary-nav">
             <a href="#"><img src="img/nav/s_dashboard.png" alt="Dashboard"> Dashboard </a>
             <a class="active" href="#"><img src="img/nav/s_ideas.png" alt="Ideas"> Ideas </a>
-            <a href="#"><img src="img/nav/s_team.png" alt="Team"> Team </a>
+            <a href="#"><img src="img/nav/s_team.png" alt="Teams"> Teams </a>
             <a href="#"><img src="img/nav/s_participants.png" alt="Participants"> Participants </a>
           </nav>
         </aside>
@@ -54,8 +54,8 @@
 
           <button class="button button-clear action-map-view">Map View</button>
 
-          <button class="button button-clear action-date">Date &or;</button>
-          <button class="button button-clear action-filter"><img src="img/ico/filter.png" /> Filter &or;</button>
+          <button class="button button-clear action-date">Date <img class="filter-caret" src="img/nav/n_arrow.png" /></button>
+          <button class="button button-clear action-filter"><img src="img/ico/filter.png" /> Filter <img class="filter-caret" src="img/nav/n_arrow.png" /></button>
         </aside>
 
         <main role="main">
@@ -184,6 +184,9 @@
         </main>
 
     </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/main.js" media="all"></script>
 
 </body>
 </html>
