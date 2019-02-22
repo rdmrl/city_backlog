@@ -5,7 +5,30 @@
   justify-content: space-between;
 
   margin: 5px 0 36px 7px;
-  max-width: 1100px;
+  max-width: 1400px;
+
+  @include media("<=tablets") { /* <=1600 */
+    max-width: 1040px;
+  }
+
+  @include media("<=desktop") { /* <=1366 */
+    margin: 5px 0 20px 7px;
+    max-width: 920px;
+  }
+
+  @include media("<=desktop-old") { /* 1024 */
+    margin: 5px 0 10px 7px;
+    max-width: 780px;
+  }
+
+  @include media("<=phones-2x") { /* <=768 */
+  }
+
+  @include media("<=phones") { /* <=640 */
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin: 5px 5px 0 8px;
+  }
   
   .search-container {
     display: flex;
@@ -18,27 +41,61 @@
     flex-basis: 36.5%;
     margin-right: 3em;
 
+    @include media("<=tablets") { /* <=1600 */
+      flex-basis: 36.5%;
+      border-radius: 1.4em;
+      margin-right: 1em;
+      padding: .3em .8em .3em 1.5em;
+    }
+    @include media("<=desktop") { /* <=1366 */
+      flex-basis: 30%;
+      border-radius: 1.4em;
+      margin-right: 1em;
+      padding: .3em .8em .3em 1.5em;
+    }
+    @include media("<=desktop-old") { /* 1024 */
+      flex-basis: 30%;
+      border-radius: 1.4em;
+      margin-right: 1em;
+      padding: .3em .8em .3em 1.5em;
+    }
+    @include media("<=phones") { /* <=640 */
+      border-radius: 1.4em;
+      margin-right: 1em;
+      padding: .1em .8em;
+      flex-basis: 50%;
+    }
+
     .search-field {
       background: transparent;
       border: 0;
       margin-right: 10px;
       padding: .4em .5em .6em .4em;
       width: 87%;
+
+      @include media("<=desktop-old") { /* 1024 */
+        padding: .3em .4em .5em .3em;
+        width: 80%;
+      }
+
+      @include media("<=phones") { /* <=640 */
+        padding: .2em .5em .4em .2em;
+        width: 77%;
+      }
     }
 
     .search-field::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: #f2f9fa;
       color: #fff;
     }
 
     .search-field::-moz-placeholder { /* Firefox 19+ */
-      color: #f2f9fa;
+      color: #fff;
     }
     .search-field:-ms-input-placeholder { /* IE 10+ */
-      color: #f2f9fa;
+      color: #fff;
     }
     .search-field:-moz-placeholder { /* Firefox 18- */
-      color: #f2f9fa;
+      color: #fff;
     }
 
     .search-button {
@@ -46,6 +103,10 @@
       padding: 0;
       width: 26px;
       height: 26px;
+      @include media("<=phones") { /* <=640 */
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 
@@ -56,9 +117,27 @@
     color: #32b4ba;
     font-weight: 600;
     letter-spacing: .03em;
-    padding: 1.1em 1.4em 1.2em;
 
+    padding: 1.1em 1.4em 1.2em;
     flex-basis: 18.5%;
+
+    @include media("<=tablets") { /* <=1600 */
+      flex-basis: 19%;
+    }
+    @include media("<=desktop") { /* <=1366 */
+      flex-basis: 19%;
+    }
+    @include media("<=desktop-old") { /* 1024 */
+      border-radius: 1.5em;
+      padding: 1em 1em 1.1em;
+      flex-basis: 20%;
+    }
+    @include media("<=phones") { /* <=640 */
+      border-radius: 1.5em;
+      box-shadow: 0 3px 6px 4px rgba(53, 164, 171, 0.9);
+      flex-basis: 40%;
+      padding: .75em .5em;
+    }
   }
 
   .button-clear {
@@ -71,8 +150,65 @@
     font-size: 1em;
     font-weight: 500;
 
+    @include media("<=tablets") { /* <=1600 */
+    }
+    @include media("<=desktop") { /* <=1366 */
+      flex-basis: 14%;
+    }
+    @include media("<=desktop-old") { /* 1024 */
+      flex-basis: 12%;
+    }
+
     .filter-caret {
       margin-left: 5px;
+    }
+  }
+
+  .action-map-view {
+    flex-basis: 8%;
+    @include media("<=tablets") { /* <=1600 */
+    }
+    @include media("<=desktop") { /* <=1366 */
+      flex-basis: 9%;
+    }
+    @include media("<=desktop-old") { /* 1024 */
+      flex-basis: 12%;
+    }
+    @include media("<=phones") { /* <=640 */
+      flex-basis: 28%;
+      margin-top: 5px;
+    }
+  }
+
+  .action-date {
+    flex-basis: 9%;
+    @include media("<=tablets") { /* <=1600 */
+    }
+    @include media("<=desktop") { /* <=1366 */
+      flex-basis: 10%;
+    }
+    @include media("<=desktop-old") { /* 1024 */
+      flex-basis: 10%;
+    }
+    @include media("<=phones") { /* <=640 */
+      flex-basis: 25%;
+      margin-top: 5px;
+    }
+  }
+
+  .action-filter {
+    flex-basis: 9%;
+    @include media("<=tablets") { /* <=1600 */
+    }
+    @include media("<=desktop") { /* <=1366 */
+      flex-basis: 10%;
+    }
+    @include media("<=desktop-old") { /* 1024 */
+      flex-basis: 12%;
+    }
+    @include media("<=phones") { /* <=640 */
+      flex-basis: 35%;
+      margin-top: 5px;
     }
   }
 }

@@ -6,20 +6,20 @@ body {
   background-color: #f2f6f9;
   background-size: contain;
 
-  @include media(">=tablets") {
+  @include media(">=tablets") { /* 1600 */
     background-image: url(../img/bg/cb_bg_1600w.png);
   }
-  @include media("<=tablets") {
+  @include media("<=tablets") { /* 1366 */
     background-image: url(../img/bg/cb_bg_1366w.png);
   }
-  @include media("<=desktop-old") {
+  @include media("<=desktop-old") { /* 1024 */
     background-image: url(../img/bg/cb_bg_1024w.png);
   }
-  @include media("<=phones-2x") {
+  @include media("<=phones-2x") { /* 768 */
     background-image: url(../img/bg/cb_bg_768w.png);
   }
-  @include media("<=phones") {
-    background-image: url(../img/bg/cb_bg_640w.png);
+  @include media("<=phones") { /* 640 */
+    background-image: url(../img/bg/cb_bg_640w_b.png);
   }
 }
 
@@ -29,14 +29,29 @@ body {
   grid-template-rows: [searchbar] auto [content] auto [rows-end];
   grid-template-columns: [sidebar] 21% [content] 79% [cols-end];
 
+  @include media("<=phones") { /* <=640 */
+    grid-template-rows: [secnav] auto [searchbar] auto [content] auto [rows-end];
+    grid-template-columns: [content] 100% [cols-end];
+  }
+
   .nav-sidebar {
     grid-row: searchbar / rows-end;
     grid-column: sidebar;
+
+    @include media("<=phones") { /* <=640 */
+      grid-row: secnav;
+      grid-column: content;
+    }
   }
 
   .search-bar {
     grid-row: searchbar / content;
     grid-column: content;
+
+    @include media("<=phones") { /* <=640 */
+      grid-row: searchbar;
+      grid-column: content;
+    }
   }
 
   main {
@@ -44,9 +59,35 @@ body {
     grid-column: content;
     padding-right: 112px;
 
+    @include media("<=tablets") { /* 1366 */
+      padding-right: 80px;
+    }
+    @include media("<=desktop-old") { /* 1024 */
+      padding-right: 20px;
+    }
+
     > header {
       margin-bottom: 45px;
+
+      @include media("<=tablets") { /* 1366 */
+        margin-bottom: 35px;
+      }
+      @include media("<=desktop-old") { /* 1024 */
+        margin-bottom: 20px;
+      }
     }
   }
 }
 
+  @include media(">tablets") { /* >1600 */
+  }
+  @include media("<=tablets") { /* <=1600 */
+  }
+  @include media("<=desktop") { /* <=1366 */
+  }
+  @include media("<=desktop-old") { /* <=1024 */
+  }
+  @include media("<=phones-2x") { /* <=768 */
+  }
+  @include media("<=phones") { /* <=640 */
+  }

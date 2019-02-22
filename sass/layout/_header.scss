@@ -1,17 +1,57 @@
 .site-header {
   display: grid;
 
+  grid-gap: 0;
   grid-template-rows: auto;
   grid-template-columns: [brand] 50% [nav] 40% [rest] 10% [end];
+
+  @include media("<=tablets") { /* <=1600 */
+    grid-template-columns: [brand] 50% [nav] 45% [rest] 5% [end];
+  }
+  @include media("<=desktop") { /* <=1366 */
+  }
+  @include media("<=desktop-old") { /* 1024 */
+    grid-template-columns: [brand] 50% [nav] 45% [rest] 5% [end];
+  }
+  @include media("<=phones-2x") { /* <=768 */
+    grid-template-columns: [brand] 50% [nav] 50% [rest] 0% [end];
+  }
+  @include media("<=phones") { /* <=640 */
+    grid-template-columns: [brand] 40% [nav] 60% [rest] 0% [end];
+  }
 
   .site-branding {
     padding: 25px 0 86px 40px;
     grid-column: brand;
 
+    @include media("<=tablets") { /* <=1600 */
+      padding: 15px 0 40px 40px;
+    }
+    @include media("<=desktop") { /* <=1366 */
+    }
+    @include media("<=desktop-old") { /* 1024 */
+      padding: 10px 0 0 40px;
+    }
+    @include media("<=phones-2x") { /* <=768 */
+      padding: 0 0 0 20px;
+    }
+    @include media("<=phones") { /* <=640 */
+      padding: 0;
+    }
+
     a {
       display: block;
       text-decoration: none;
       line-height: 0;
+
+      img {
+        @include media("<=phones-2x") { /* <=768 */
+          height: 60px;
+        }
+        @include media("<=phones") { /* <=640 */
+          height: 45px;
+        }
+      }
     }
   }
 
@@ -20,9 +60,33 @@
     padding: 47px 3px 0;
     text-align: right;
 
+    @include media("<=tablets") { /* 1366 */
+      padding: 37px 3px 0;
+    }
+    @include media("<=desktop-old") { /* 1024 */
+      padding: 27px 3px 0;
+    }
+    @include media("<=phones-2x") { /* <=768 */
+      padding: 7px 3px 0;
+    }
+    @include media("<=phones") { /* <=640 */
+      padding: 5px 5px 0;
+    }
+
     a {
       text-decoration: none;
       margin-right: 18px;
+      line-height: 0;
+      @include media("<=phones") { /* <=640 */
+        margin-right: 8px;
+      }
+
+      img {
+        @include media("<=phones") { /* <=640 */
+          height: 28px;
+          width: auto;
+        }
+      }
     }
 
     /* TODO: add a shadow to the profile icon. */

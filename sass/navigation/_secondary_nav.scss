@@ -1,6 +1,23 @@
 
 .secondary-nav {
   padding: 0 55px 1em 105px;
+
+  @include media("<=tablets") { /* <=1600 */
+    padding: 0 45px 1em 45px;
+  }
+  @include media("<=desktop") { /* <=1366 */
+  }
+  @include media("<=desktop-old") { /* 1024 */
+    padding: 0 25px 1em 25px;
+  }
+  @include media("<=phones-2x") { /* <=768 */
+    padding: 0 8px 1em 7px;
+  }
+  @include media("<=phones") { /* <=640 */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2px;
+  }
   
   a {
     display: flex;
@@ -18,10 +35,36 @@
 
     text-decoration: none;
 
+    @include media("<=desktop-old") { /* 1024 */
+      margin: 0 0 .5em;
+      padding: 0em .45em .2em .65em;
+    }
+
+    @include media("<=phones-2x") { /* <=768 */
+      margin-bottom: 5px;
+      padding: 0em .45em .1em .5em;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    @include media("<=phones") { /* <=640 */
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      padding: 0 .8em .3em .8em;
+    }
+
     img {
       display: inline-block;
       margin-top: 4px;
       margin-right: 9px;
+      @include media("<=phones-2x") { /* <=768 */
+        margin-top: 1px;
+      }
+      @include media("<=phones") { /* <=640 */
+        display: none;
+      }
     }
   }
 
