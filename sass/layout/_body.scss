@@ -65,6 +65,9 @@ body {
     @include media("<=desktop-old") { /* 1024 */
       padding-right: 20px;
     }
+    @include media("<=phones") { /* <=640 */
+      padding: 0 10px 1em;
+    }
 
     > header {
       margin-bottom: 45px;
@@ -74,6 +77,9 @@ body {
       }
       @include media("<=desktop-old") { /* 1024 */
         margin-bottom: 20px;
+      }
+      @include media("<=phones") { /* <=640 */
+        margin-bottom: 30px;
       }
     }
   }

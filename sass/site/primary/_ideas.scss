@@ -33,10 +33,22 @@
     padding: 1em 1em 1.5em 1em;
     margin-bottom: 40px;
   }
+  @include media("<=phones-2x") { /* <=768 */
+  }
+  @include media("<=phones") { /* <=640 */
+    grid-template-rows: [header] auto [image] auto [description] auto [numbers] auto [buttons] auto [rows-end];
+    grid-template-columns: [content] auto [cols-end];
+    padding: 10px;
+  }
 
   .idea-img {
     grid-row: header / rows-end;
     grid-column: image;
+
+    @include media("<=phones") { /* <=640 */
+      grid-row: image / description;
+      grid-column: content;
+    }
   }
 
   header {
@@ -46,6 +58,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
+    @include media("<=phones") { /* <=640 */
+      grid-row: header / image;
+      align-items: flex-start;
+    }
 
     h3 {
       color: #000;
@@ -57,6 +74,12 @@
       @include media("<=desktop-old") { /* <=1024 */
         font-size: 1.5em;
         font-weight: 500;
+      }
+      @include media("<=phones") { /* <=640 */
+        font-size: 1.4em;
+        font-weight: 500;
+        overflow-wrap: break-word;
+        line-height: 1.2em;
       }
     }
 
@@ -86,10 +109,17 @@
         font-size: 1em;
         padding: .3em 1em .6em 1em;
       }
+      @include media("<=phones") { /* <=640 */
+        margin-top: 5px;
+        padding: .3em .75em .6em .75em;
+      }
 
       img {
         display: inline-block;
         margin-right: 0px;
+        @include media("<=phones") { /* <=640 */
+          display: none;
+        }
       }
     }
   }
@@ -100,6 +130,9 @@
 
     @include media("<=desktop-old") { /* <=1024 */
       padding-right: 0;
+    }
+    @include media("<=phones") { /* <=640 */
+      margin-top: 0;
     }
 
     p {
@@ -116,6 +149,11 @@
     padding-left: 3px;
     padding-top: 8px;
 
+    @include media("<=phones") { /* <=640 */
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
     .circle {
       border: 1px solid #e0e5e9;
       border-radius: 50%;
@@ -124,8 +162,15 @@
       text-align: center;
       padding: .8em 1em .9em;
       margin-right: 3%;
+
       @include media(">=desktop") { /* >= 1366 */
         margin-right: 4%;
+      }
+      @include media("<=phones") { /* <=640 */
+        padding: 6px;
+        width: 6.6em;
+        height: 6.6em;
+        flex-basis: 30%;
       }
 
       strong {
@@ -153,12 +198,19 @@
       @include media(">=desktop") { /* >= 1366 */
         margin-right: 4%;
       }
+      @include media("<=phones") { /* <=640 */
+        display: none;
+      }
     }
 
     .map-img {
       margin-right: 3%;
       @include media(">=desktop") { /* >= 1366 */
         margin-right: 4%;
+      }
+      @include media("<=phones") { /* <=640 */
+        margin-left: 30px;
+        margin-right: 30px;
       }
     }
 
@@ -192,7 +244,14 @@
   .actions {
     margin-top: .75em;
     padding-left: 9px;
+
+    .button {
+      @include media("<=phones") { /* <=640 */
+        margin-bottom: 1em;
+      }
+    }
   }
+
 }
 
 .numbers-impacted {
