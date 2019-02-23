@@ -22,6 +22,8 @@
   }
 
   @include media("<=phones-2x") { /* <=768 */
+    margin: 5px 0 8px 7px;
+    max-width: 590px;
   }
 
   @include media("<=phones") { /* <=640 */
@@ -59,6 +61,12 @@
       margin-right: 1em;
       padding: .3em .8em .3em 1.5em;
     }
+    @include media("<=phones-2x") { /* <=768 */
+      border-radius: 1.4em;
+      margin-right: .75em;
+      padding: .1em .8em;
+      flex-basis: 28%;
+    }
     @include media("<=phones") { /* <=640 */
       border-radius: 1.4em;
       margin-right: 1em;
@@ -76,6 +84,10 @@
       @include media("<=desktop-old") { /* 1024 */
         padding: .3em .4em .5em .3em;
         width: 80%;
+      }
+
+      @include media("<=phones-2x") { /* <=768 */
+        font-size: .9em;
       }
 
       @include media("<=phones") { /* <=640 */
@@ -103,6 +115,12 @@
       padding: 0;
       width: 26px;
       height: 26px;
+
+      @include media("<=phones-2x") { /* <=768 */
+        width: 22px;
+        height: 22px;
+      }
+
       @include media("<=phones") { /* <=640 */
         width: 20px;
         height: 20px;
@@ -132,6 +150,13 @@
       padding: 1em 1em 1.1em;
       flex-basis: 20%;
     }
+    @include media("<=phones-2x") { /* <=768 */
+      border-radius: 1.5em;
+      box-shadow: 0 3px 6px 4px rgba(53, 164, 171, 0.9);
+      flex-basis: 24%;
+      padding: .5em .4em .8em;
+      margin-right: 3px;
+    }
     @include media("<=phones") { /* <=640 */
       border-radius: 1.5em;
       box-shadow: 0 3px 6px 4px rgba(53, 164, 171, 0.9);
@@ -158,6 +183,9 @@
     @include media("<=desktop-old") { /* 1024 */
       flex-basis: 12%;
     }
+    @include media("<=phones-2x") { /* <=768 */
+      font-size: .9em;
+    }
 
     .filter-caret {
       margin-left: 5px;
@@ -173,6 +201,9 @@
     }
     @include media("<=desktop-old") { /* 1024 */
       flex-basis: 12%;
+    }
+    @include media("<=phones-2x") { /* <=768 */
+      flex-basis: 14%;
     }
     @include media("<=phones") { /* <=640 */
       flex-basis: 28%;
@@ -190,6 +221,9 @@
     @include media("<=desktop-old") { /* 1024 */
       flex-basis: 10%;
     }
+    @include media("<=phones-2x") { /* <=768 */
+      flex-basis: 13%;
+    }
     @include media("<=phones") { /* <=640 */
       flex-basis: 25%;
       margin-top: 5px;
@@ -205,6 +239,9 @@
     }
     @include media("<=desktop-old") { /* 1024 */
       flex-basis: 12%;
+    }
+    @include media("<=phones-2x") { /* <=768 */
+      flex-basis: 15%;
     }
     @include media("<=phones") { /* <=640 */
       flex-basis: 35%;
