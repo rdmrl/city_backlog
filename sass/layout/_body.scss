@@ -90,6 +90,10 @@ body {
   }
 }
 
+body.page-participant-profile .wrapper {
+  margin-top: 60px;
+}
+
   @include media(">tablets") { /* >1600 */
   }
   @include media("<=tablets") { /* <=1600 */
