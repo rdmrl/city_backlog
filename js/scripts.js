@@ -56,6 +56,12 @@
     el.clearButton.on('click', function () {
       clearAllFilters();
     });
+
+    if (el.mapViewButton) {
+      el.mapViewButton.on('click', function () {
+        window.location.href = 'http://ec2-13-127-219-5.ap-south-1.compute.amazonaws.com/city_backlog/ideas/map_view.html';
+      });
+    }
   };
 
   var clearAllFilters = function () {
@@ -68,6 +74,8 @@
 
     el.doneButton = $('#close_filters');
     el.clearButton = $('#clear_all_filters');
+
+    el.mapViewButton = $('#action-map-view');
   };
 
   cityBacklog.init = function () {
