@@ -9,6 +9,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.css" integrity="sha256-RdH19s+RN0bEXdaXsajztxnALYs/Z43H/Cdm1U4ar24=" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet" media="all">
 
     <!-- Include the HTML5 shiv print polyfill for Internet Explorer browsers 8 and below -->
@@ -55,7 +56,7 @@
 
           <button type="button" class="button button-clear action-date">Date <img class="filter-caret" src="img/nav/n_arrow.png" alt="down arrow" /></button>
 
-          <button type="button" class="button button-clear action-filter"><img src="img/ico/filter.png" alt="Filter" /> Filter <img class="filter-caret" src="img/nav/n_arrow.png" alt="down arrow" /></button>
+          <button id="action-filter" type="button" class="button button-clear action-filter"><img src="img/ico/filter.png" alt="Filter" /> Filter <img class="filter-caret" src="img/nav/n_arrow.png" alt="down arrow" /></button>
         </aside>
 
         <main role="main">
@@ -186,7 +187,40 @@
     </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/main.js" media="all"></script>
+    <script src="//cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js" integrity="sha256-P93G0oq6PBPWTP1IR8Mz/0jHHUpaWL0aBJTKauisG7Q=" crossorigin="anonymous"></script>
+    <script src="js/scripts.js" media="all"></script>
 
+<div id="filters" class="popup">
+
+  <h3>Focus Area</h3>
+  <section class="filter-container">
+    <button id="focus_education" type="button" class="button action-filter selected">Education</button>
+    <button id="focus_workforce" type="button" class="button action-filter selected">Workforce</button>
+    <button id="focus_transportation" type="button" class="button action-filter">Transportation</button>
+    <button id="focus_public_safety" type="button" class="button action-filter">Public Safety</button>
+    <button id="focus_housing" type="button" class="button action-filter">Housing</button>
+    <button id="focus_health" type="button" class="button action-filter selected">Health</button>
+  </section>
+
+  <h3>Community</h3>
+  <section class="filter-container">
+    <button id="community_west_baltimore" type="button" class="button action-filter selected">West Baltimore</button>
+    <button id="community_east_baltimore" type="button" class="button action-filter selected">East Baltimore</button>
+  </section>
+
+  <h3>Stage</h3>
+  <section class="filter-container">
+    <button id="stage_submitted" type="button" class="button action-filter selected">Submitted</button>
+    <button id="stage_vetted" type="button" class="button action-filter">Vetted</button>
+    <button id="stage_funded" type="button" class="button action-filter">Funded</button>
+    <button id="stage_awarded" type="button" class="button action-filter">Awarded</button>
+  </section>
+
+  <section class="filter-container filter-controls">
+    <button id="close_filters" type="button" class="button action-close">Done</button>
+    <button id="clear_all_filters" type="button" class="button cancel-button action-clear">Clear all</button>
+  </section>
+
+</div>
 </body>
 </html>
