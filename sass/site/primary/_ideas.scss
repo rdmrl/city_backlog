@@ -34,6 +34,10 @@
     margin-bottom: 40px;
   }
   @include media("<=phones-2x") { /* <=768 */
+    grid-template-rows: [header] auto [description] auto [numbers] auto [buttons] auto [rows-end];
+    grid-template-columns: [image] 1fr [content] 3fr [cols-end];
+    padding: 1em 1em 1.5em 1em;
+    margin-bottom: 40px;
   }
   @include media("<=phones") { /* <=640 */
     grid-template-rows: [header] auto [image] auto [description] auto [numbers] auto [buttons] auto [rows-end];
@@ -45,6 +49,10 @@
     grid-row: header / rows-end;
     grid-column: image;
 
+    @include media("<=phones-2x") { /* <=768 */
+      grid-row: header / numbers;
+      grid-column: image;
+    }
     @include media("<=phones") { /* <=640 */
       grid-row: image / description;
       grid-column: content;
@@ -59,8 +67,13 @@
     justify-content: space-between;
     align-items: flex-end;
 
+    @include media("<=phones-2x") { /* <=768 */
+      align-items: flex-start;
+    }
+
     @include media("<=phones") { /* <=640 */
       grid-row: header / image;
+      grid-column: content;
       align-items: flex-start;
     }
 
@@ -74,6 +87,12 @@
       @include media("<=desktop-old") { /* <=1024 */
         font-size: 1.5em;
         font-weight: 500;
+      }
+      @include media("<=phones-2x") { /* <=768 */
+        font-size: 1.4em;
+        font-weight: 500;
+        overflow-wrap: break-word;
+        line-height: 1.2em;
       }
       @include media("<=phones") { /* <=640 */
         font-size: 1.4em;
@@ -109,6 +128,10 @@
         font-size: 1em;
         padding: .3em 1em .6em 1em;
       }
+      @include media("<=phones-2x") { /* <=768 */
+        margin-top: 5px;
+        padding: .3em .75em .6em .75em;
+      }
       @include media("<=phones") { /* <=640 */
         margin-top: 5px;
         padding: .3em .75em .6em .75em;
@@ -117,7 +140,7 @@
       img {
         display: inline-block;
         margin-right: 0px;
-        @include media("<=phones") { /* <=640 */
+        @include media("<=phones-2x") { /* <=768 */
           display: none;
         }
       }
@@ -130,6 +153,10 @@
 
     @include media("<=desktop-old") { /* <=1024 */
       padding-right: 0;
+    }
+    @include media("<=phones-2x") { /* <=768 */
+      grid-row: description / numbers;
+      grid-column: content;
     }
     @include media("<=phones") { /* <=640 */
       margin-top: 0;
@@ -149,7 +176,13 @@
     padding-left: 3px;
     padding-top: 8px;
 
+    @include media("<=phones-2x") { /* <=768 */
+      grid-row: numbers / buttons;
+      grid-column: image / cols-end;
+    }
     @include media("<=phones") { /* <=640 */
+      grid-row: numbers / buttons;
+      grid-column: content;
       margin-top: 10px;
       flex-wrap: wrap;
     }
@@ -245,9 +278,26 @@
     margin-top: .75em;
     padding-left: 9px;
 
+    @include media("<=phones") { /* <=640 */
+      grid-row: buttons / rows-end;
+      grid-column: content / cols-end;
+      padding-left: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @include media("<=phones-2x") { /* <=768 */
+      grid-row: buttons / rows-end;
+      grid-column: image / cols-end;
+    }
+
     .button {
       @include media("<=phones") { /* <=640 */
+        font-size: 1em;
+        font-weight: 400;
         margin-bottom: 1em;
+        margin-right: 0;
+        padding: .5em 1.2em .8em;
       }
     }
   }

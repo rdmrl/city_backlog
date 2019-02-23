@@ -29,6 +29,9 @@ body {
   grid-template-rows: [searchbar] auto [content] auto [rows-end];
   grid-template-columns: [sidebar] 21% [content] 79% [cols-end];
 
+  @include media("<=phones-2x") { /* 768 */
+  }
+
   @include media("<=phones") { /* <=640 */
     grid-template-rows: [secnav] auto [searchbar] auto [content] auto [rows-end];
     grid-template-columns: [content] 100% [cols-end];
@@ -64,6 +67,8 @@ body {
     }
     @include media("<=desktop-old") { /* 1024 */
       padding-right: 20px;
+    }
+    @include media("<=phones-2x") { /* <=768 */
     }
     @include media("<=phones") { /* <=640 */
       padding: 0 10px 1em;
