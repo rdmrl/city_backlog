@@ -1,0 +1,286 @@
+.participants-list {
+  display: grid;
+
+  grid-gap: 2.5em;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+
+  .participant {
+    background-color: #fff;
+    border-radius: 1em;
+    box-shadow: 0 10px 60px 0px rgba(208, 218, 239, 0.9);
+    padding: 1em 1em 2em;
+    text-align: center;
+    
+    img {
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    h2 {
+      color: #000;
+      font-size: 1.6em;
+      font-weight: 400;
+    }
+
+    h3 {
+      color: #cacaca;
+      font-size: 1.2em;
+      font-weight: 700;
+    }
+  }
+}
+
+.participant-profile {
+  
+  display: grid;
+
+  grid-gap: 2.5em;
+
+  grid-template-rows: [info] auto [social] auto [skills] auto [teams] auto [rows-end];
+  grid-template-columns: [tags] 1fr [content] 2fr [gutter] 1px [cols-end];
+
+  .profile-info {
+    position: relative;
+
+    grid-gap: 3em;
+    grid-row: info / social;
+    grid-column: tags / cols-end;
+
+    display: grid;
+    font-size: 1.1em;
+
+    padding: 3em;
+
+    grid-template-rows: [first] auto [rows-end];
+    grid-template-columns: [image] 1fr [info] 2.5fr [cols-end];
+
+    .profile-info-content {
+      grid-row: first;
+      grid-column: info;
+    }
+
+    .profile-image {
+      grid-row: first;
+      grid-column: image;
+    }
+
+    h2 {
+      font-size: 2em;
+      font-weight: 600;
+      color: #000
+    }
+
+    .twitter-handle {
+      color: #a3a3a3;
+    }
+
+    dl {
+      margin-top: 3em;
+    }
+  }
+
+  dt {
+    color: #a3a3a3;
+    font-weight: 600;
+    margin-bottom: .2em;
+  }
+
+  dd {
+    color: #000;
+    margin-left: 0;
+    margin-bottom: 1.5em;
+  }
+
+  #bookmark {
+    position: absolute;
+    top: -8px;
+    left: 80%;
+  }
+
+  .content-box {
+    border-radius: .75em;
+    padding: 1.5em 3.5em;
+    margin-bottom: 2.5em;
+  }
+
+  h3 {
+    margin-bottom: 1.5em;
+  }
+
+  .social-media {
+    grid-row: social / skills;
+    grid-column: content / gutter;
+
+    .social-logo {
+      margin: 0 5em 1em 0;
+    }
+  }
+
+  .technical-skills {
+    grid-row: skills / teams;
+    grid-column: content / gutter;
+
+    .skill-item {
+      display: grid;
+
+      grid-gap: 1em;
+      grid-template-rows: auto;
+      grid-template-columns: [icon] 40px [skill] 70% [year] 20% [cols-end];
+
+      margin-bottom: 1.5em;
+
+      .skill-icon {
+        grid-column: icon / skill;
+        padding-top: .5em;
+        text-align: center;
+      }
+
+      .skill-details {
+        grid-column: skill / year;
+
+        .skill-name {
+          color: #000;
+          font-size: 1.1em;
+          font-weight: 500;
+        }
+
+        .skill-provider {
+          color: #a3a3a3;
+        }
+      }
+
+      .skill-year {
+        color: #a3a3a3;
+        font-size: 1.1em;
+        font-weight: 400;
+        grid-column: year;
+        text-align: center;
+      }
+
+    }
+  }
+
+  .teams {
+    grid-row: teams / rows-end;
+    grid-column: content / gutter;
+
+    .teams-list {
+
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+
+      .team-block {
+
+        flex-basis: 48%;
+
+        display: grid;
+        grid-gap: 1em;
+        grid-template-rows: [type] auto [content] auto [rows-end];
+        grid-template-columns: [logo] 20% [content] 80% [cols-end];
+
+        .team-type {
+          color: #a3a3a3;
+          font-weight: 600;
+
+          grid-row: type / content;
+          grid-column: content;
+        }
+
+        .team-details {
+
+          grid-row: content / rows-end;
+          grid-column: content;
+
+          h5 {
+            color: #a3a3a3;
+          }
+        }
+
+        .logo {
+          grid-row: content / rows-end;
+          grid-column: logo;
+        }
+
+        h4 {
+          color: #000;
+          font-size: 1.1em;
+          font-weight: 600;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+        h5 {
+          font-size: 1em;
+          margin-top: 0;
+          margin-bottom: 4px;
+        }
+
+        dt {
+          margin-bottom: 0;
+        }
+
+        dd {
+          font-weight: 500;
+          margin-bottom: .5em;
+        }
+
+      }
+    }
+  }
+
+  .tags {
+    grid-row: social / skills;
+    grid-column: tags / content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-left: 2em;
+
+    .profile-tag {
+
+      display: flex;
+      align-items: center;
+
+      border: 2px solid #9ea0a2;
+      border-radius: 2.4em;
+
+      color: #9ea0a2;
+
+      font-weight: 600;
+
+      margin-bottom: 2em;
+      padding: .65em 1.5em .8em;
+
+      width: auto;
+      
+      img {
+        margin-right: 8px;
+        margin-top: 3px;
+      }
+
+      span {
+        color: #6ca7e8;
+        display: inline-block;
+        margin-left: 8px;
+      }
+
+    }
+  }
+
+}
+
+.content-box {
+  background-color: #fff;
+  border-radius: 1em;
+  box-shadow: 0 10px 60px 0px rgba(208, 218, 239, 0.9);
+  padding: 1em 1em 2em;
+
+  h3 {
+    color: #a3a3a3;
+  }
+}
