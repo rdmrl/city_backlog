@@ -1,0 +1,99 @@
+/* The styles for the teams list page. */
+.teams-list {
+
+  display: grid;
+
+  grid-gap: 2.5em;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+  padding-bottom: 5em;
+
+  .team-member {
+    background-color: #fff;
+    border-radius: 1em;
+    box-shadow: 0 10px 60px 0px rgba(208, 218, 239, 0.9);
+    padding: 1em 1em 2em;
+
+    img {
+      margin: 1em 0 0;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: #000;
+      font-size: 1.6em;
+      font-weight: 600;
+      margin: 0 0 .5em;
+      text-align: center;
+    }
+
+    p {
+      color: #a3a3a3;
+      text-align: center;
+      margin: 0 1em;
+      font-weight: 400;
+    }
+
+    .team-images-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 1em;
+      margin-bottom: 1em;
+
+      ul {
+        flex-basis: 85%;
+
+        list-style: none;
+        margin: 0;
+        padding-left: 1em;
+
+        li {
+          display: inline-block;
+          margin-left: -20px;
+        }
+      }
+
+      span {
+        color: #a3a3a3;
+        text-align: center;
+        font-size: .9em;
+        line-height: 1.1em;
+        font-weight: 400;
+
+        strong {
+          font-size: 1.2em;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .details-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.2em;
+
+      label {
+        flex-basis: 80%;
+      }
+
+      span {
+        color: #5599e6;
+        flex-basis: 20%;
+        font-size: 1.1em;
+        font-weight: 600;
+        min-width: 25px;
+        text-align: center;
+      }
+    }
+
+  }
+
+}

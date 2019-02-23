@@ -1,0 +1,49 @@
+
+/* The styles for the map view page. */
+.map-view {
+  
+  display: grid;
+
+  grid-template-rows: [map] auto [ideas] auto [rows-end];
+  grid-template-columns: [map] 70% [location] 30% [cols-end];
+
+  min-height: 1000px;
+
+  .map {
+    grid-row: map / ideas;
+    grid-column: map / location;
+
+    /*
+    position: relative;
+    overflow: none;
+    */
+
+    img {
+      margin-left: -80px;
+      margin-top: -60px;
+      /*
+      position: absolute;
+      top: -60px;
+      left: -80px;
+      */
+    }
+  }
+
+  .location {
+    grid-row: map / ideas;
+    grid-column: location / cols-end;
+
+    .location-details {
+
+      border: 1px solid #a3a3a3;
+      border-radius: 1.5em;
+      padding: 1.5em;
+    }
+  }
+
+  .map-ideas {
+    grid-row: ideas / rows-end;
+    grid-column: map / cols-end;
+  }
+
+}
