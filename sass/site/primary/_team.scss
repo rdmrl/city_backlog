@@ -1,0 +1,166 @@
+/* The styles for a single team details page. */
+
+.team-member {
+
+  margin-bottom: 4em;
+
+  .content-box {
+    margin-bottom: 4em;
+  }
+
+  h3 {
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 2em;
+
+    span {
+      color: #b8bbbd;
+      font-size: .7em;
+      font-weight: 500;
+      display: inline-block;
+      margin-left: 8px;
+    }
+  }
+
+  .team-info {
+    display: grid;
+
+    grid-template-rows: auto;
+    grid-template-columns: [logo] 1fr [content] 2fr [image] 1.5fr [cols-end];
+
+    padding: 3em 2em;
+
+    .logo {
+      grid-column: logo / content;
+      justify-self: center;
+      align-self: center;
+      margin-right: 1em;
+    }
+
+    h2 {
+      color: #000;
+      font-size: 1.8em;
+      font-weight: 600;
+      margin-bottom: 1em;
+    }
+
+    .description {
+      grid-column: content / image;
+
+      p {
+        color: #a3a3a3;
+        font-size: 1em;
+        font-weight: 400;
+      }
+    }
+
+    .hero {
+      grid-column: image / cols-end;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+
+  .team-members {
+    
+    padding: 2em;
+
+    .members-list {
+      display: grid;
+
+      grid-gap: 2em;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+
+      .member {
+        text-align: center;
+        margin-right: 60px;
+
+        h4 {
+          color: #000;
+          font-size: 1.2em;
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+
+        span {
+          color: #c0c3c6;
+          font-size: .9em;
+          font-weight: 500;
+          line-height: 1em;
+          margin-top: -5px;
+        }
+      }
+    }
+  }
+
+  .achievements-list {
+    display: grid;
+
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .achievement {
+      text-align: center;
+      margin-right: 80px;
+
+      h4 {
+        color: #000;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin: 1em 3em .4em;
+        line-height: 1.2;
+      }
+
+      span {
+        color: #c0c3c6;
+        font-size: 1em;
+        font-weight: 600;
+        line-height: 1em;
+      }
+    }
+
+  }
+
+  .focus-areas {
+
+    margin-top: 2em;
+
+    .focus-areas-list {
+      
+      display: flex;
+      align-items: flex-start;
+
+      .profile-tag {
+        
+        display: flex;
+        align-items: center;
+
+        border: 2px solid #9ea0a2;
+        border-radius: 2.4em;
+
+        color: #9ea0a2;
+
+        font-weight: 600;
+
+        margin-bottom: 2em;
+        margin-right: 2em;
+
+        padding: .65em 1.5em .8em;
+
+        width: auto;
+
+        img {
+          margin-right: 8px;
+          margin-top: 3px;
+        }
+      }
+
+      .profile-tag-add {
+        border: 2px dashed #a3a3a3;
+      }
+    }
+
+  }
+}
+  
