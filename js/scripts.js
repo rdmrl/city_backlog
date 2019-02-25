@@ -46,11 +46,14 @@
     });
   };
 
+  cityBacklog.showAddMemberPopup = function (event) {
+    el.addMember.magnificPopup('open');
+  };
+
   var initHandlers = function () {
     el.actionFilter.on('click', function () {
 
       $(this).addClass('showing-filters');
-
 
       var screenWidth = $(window).width();
 
@@ -86,6 +89,13 @@
       });
     });
 
+    el.focusAreaListCreateTeam.find('.action-filter').each(function (index, element) {
+      $(element).on('click', function () {
+        $(this).toggleClass('selected');
+      });
+    });
+
+
     el.doneButton.on('click', function () {
       el.actionFilter.removeClass('showing-filters');
       el.filterPopup.hide();
@@ -114,10 +124,45 @@
         el.inviteButton.magnificPopup('close');
       });
     }
+
+    if (el.addAchievement) {
+      el.addAchievement.on('click', function () {
+        showAddAchievementPopup();
+      });
+    }
+
+    if (el.addFocusArea) {
+      el.addFocusArea.on('click', function () {
+        el.addFocusArea.magnificPopup('open');
+      });
+    }
+
+    if (el.addAchievementClose) {
+      el.addAchievementClose.on('click', function () {
+        el.addAchievement.magnificPopup('close');
+      });
+    }
+
+    if (el.addMemberClose) {
+      el.addMemberClose.on('click', function () {
+        el.addMember.magnificPopup('close');
+      });
+    }
+
+    if (el.addFocusAreaClose) {
+      el.addFocusAreaClose.on('click', function () {
+        el.addFocusArea.magnificPopup('close');
+      });
+    }
+
   };
 
   var showInviteMembersPopup = function () {
     el.inviteButton.magnificPopup('open');
+  };
+
+  var showAddAchievementPopup = function () {
+    el.addAchievement.magnificPopup('open');
   };
 
   var initPopups = function () {
@@ -130,6 +175,37 @@
         modal: true
       });
     }
+
+    if (el.addAchievement) {
+      el.addAchievement.magnificPopup({
+        items: {
+          src: '#add-achievement-popup',
+          type: 'inline'
+        },
+        modal: true
+      });
+    }
+
+    if (el.addMember) {
+      el.addMember.magnificPopup({
+        items: {
+          src: '#add-member-popup',
+          type: 'inline'
+        },
+        modal: true
+      });
+    }
+
+    if (el.addFocusArea) {
+      el.addFocusArea.magnificPopup({
+        items: {
+          src: '#add-focus-area-popup',
+          type: 'inline'
+        },
+        modal: true
+      });
+    }
+
   };
 
   var clearAllFilters = function () {
@@ -147,6 +223,17 @@
 
     el.inviteButton = $('#invite-members');
     el.inviteDoneButton = $('#invite-popup-close');
+
+    el.addAchievement = $('#add-achievement');
+    el.addAchievementClose = $('#add-achievement-done');
+
+    el.addMember = $('#create-team-add-member');
+    el.addMemberClose = $('#add-member-done');
+
+    el.addFocusArea = $('#add-focus-area');
+    el.addFocusAreaClose = $('#add-focus-area-done');
+
+    el.focusAreaListCreateTeam = $('#add-focus-area-popup');
   };
 
   cityBacklog.init = function () {
