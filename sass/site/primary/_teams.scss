@@ -97,3 +97,33 @@
   }
 
 }
+
+#invite-members-popup {
+  h3 {
+    color: #a3a3a3;
+  }
+}
+
+.popup {
+  width: 60%;
+  margin: 0 auto;
+
+  .popup-content {
+    border-radius: 1em;
+    background-color: #fff;
+    padding: 3em;
+  }
+
+  .form-elements {
+    margin: 1em 4em 1.5em 0;
+  }
+
+  .button-bar {
+    margin-bottom: 1em;
+     
+    .button-bar-item {
+      margin-left: 1.5em;
+      margin-right: 0;
+    }
+  }
+}

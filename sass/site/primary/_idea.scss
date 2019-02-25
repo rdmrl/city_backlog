@@ -112,9 +112,14 @@
     display: grid;
 
     grid-gap: 1em;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: .9fr 1.2fr .7fr .8fr .8fr;
 
     padding: 1em 0;
+    margin-bottom: 3em;
+
+    .left-pad {
+      padding-left: 1.5em;
+    }
 
     .status-item {
       display: grid;
@@ -136,14 +141,18 @@
 
         font-size: 1.1em;
         font-weight: 600;
+        line-height: 1;
       }
 
       span {
         grid-row: 2 / 3;
         grid-column: 2 / 3;
 
+        display: inline-block;
+
         font-size: 1.6em;
-        font-weight: 700;
+        font-weight: 600;
+        line-height: 1;
       }
     }
 
@@ -168,11 +177,15 @@
     }
 
     .action-view-github {
+      align-self: center;
       display: block;
+
       border: 2px solid #52bda1;
-      color: #957a84;
       border-radius: 1.6em;
-      padding: 1em 2.5em;
+      color: #52bda1;
+      font-size: 1.1em;
+      font-weight: 600;
+      padding: .5em 2em .75em;
     }
 
 
@@ -185,6 +198,60 @@
       font-size: 1.2em;
       font-weight: 600;
     }
+
+    .time-line-calendar {
+      display: flex;
+      margin: 0;
+      padding: 2em 0;
+      position: relative;
+
+      width: 100%;
+      z-index: 0;
+
+      .background-line {
+
+        background-color: #60c37c;
+
+        position: absolute;
+        top: 48%;
+        left: 0;
+        right: 0;
+        height: 4px;
+
+        z-index: 1;
+      }
+
+      .events-list {
+        background: rgba(204, 204, 204, 0.2);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        z-index: 2;
+      }
+
+      .event {
+        border-radius: 15px;
+        box-shadow: 0 0 12px 0 rgba(200, 215, 232, 0.9);
+        color: #fff;
+        display: inline-block;
+
+        margin-left: 100px;
+
+
+        height: 30px;
+        width: 30px;
+      }
+
+      .active {
+        background-color: #60c37c;
+      }
+    }
   }
 
   .idea-content {
@@ -195,9 +262,13 @@
     grid-template-rows: auto;
     grid-template-columns: 2fr 1fr;
 
+    margin-top: 2em;
+
     .tabs {
       grid-row: 1 / 2;
       grid-column: 1 / 2;
+
+      background-color: #fff;
 
       ul.tabs-list {
         box-shadow: 0 4px 6px 0 rgba(200, 215, 232, 0.5);
@@ -210,7 +281,7 @@
 
         li {
           text-align: center;
-          padding: 1em;
+          padding: 1.5em 0 1.5em;
 
           a {
             color: #b2b2b2;
@@ -219,19 +290,221 @@
             text-decoration: none;
             text-transform: uppercase;
           }
+        }
 
-          a.active {
+        li.active {
+          box-shadow: 4px 0 6px 0 rgba(200, 215, 232, 0.5);
+          box-shadow: -4px 0 6px 0 rgba(200, 215, 232, 0.5);
+
+          a {
             color: #44c1ca;
           }
         }
       }
     }
 
+    .content-section {
+      display: grid;
+
+      grid-gap: 0 1em;
+
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1.2fr;
+
+      background-color: #fff;
+      padding: 2em 2em 1em;
+
+      h3 {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+
+      .heading-underline {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+
+        background-color: #89d8de;
+        width: 35px;
+        height: 4px;
+        margin: 8px 0 1em 0;
+      }
+
+      img {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+      }
+
+      .text {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+      }
+
+    }
+
+    .why-it-matters-content {
+      display: grid;
+
+      grid-gap: 1em;
+      grid-template-rows: auto;
+      grid-template-columns: 1.4fr 1fr;
+
+      padding-bottom: 3em;
+
+      img.map {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+
+        z-index: 0;
+        margin-top: 10px;
+        margin-left: 0px;
+      }
+
+      .help-content {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+      }
+
+      .text {
+        grid-row: 2 / 3;
+        grid-column:  1 / 3;
+
+        padding: 0 5em;
+
+        h3 {
+          font-size: 1.3em;
+        }
+
+        .heading-underline {
+          background-color: #89d8de;
+          width: 35px;
+          height: 4px;
+          margin: 8px 0 1em 0;
+        }
+
+        p {
+        }
+      }
+
+      .help-content {
+        padding-top: 5em;
+
+        h3 {
+          color: #000;
+          font-size: 1.3em;
+          font-weight: 600;
+          margin-bottom: 1em;
+        }
+
+        .location-list {
+          list-style: none;
+          margin-top: .5em;
+          padding: 0;
+
+          li {
+            margin-bottom: 1em;
+
+            strong {
+              font-size: 2.5em;
+              font-weight: 500;
+            }
+
+            span {
+              display: block;
+              color: #aaa;
+              font-size: 1.1em;
+              font-weight: 500;
+              line-height: 1;
+              margin-left: 3px;
+            }
+          }
+
+          li::before {
+            content: "\2022";
+            display: inline-block;
+            font-size: 2em;
+            font-weight: 600;
+            margin-left: -1em;
+            width: 1em;
+          }
+          
+          .location-1 {
+            color: #60c37c;
+          }
+
+          .location-2 {
+            color: #539def;
+          }
+
+          .location-3 {
+            color: #df618d;
+          }
+            
+        }
+      }
+      
+    }
+
+    .assets-content {
+      display: grid;
+
+      grid-gap: 2.5em 1.5em;
+      grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+
+      padding: 2em;
+    }
+
+    .add-asset {
+      border: 1px dashed #cecece;
+      color: #adadad;
+      text-align: center;
+
+      border-radius: 1.2em;
+
+      min-height: 248px;
+
+      position: relative;
+
+      .add-icon {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        font-size: 2em;
+      }
+
+      h3 {
+        color: #adadad;
+        font-size: 1.2em;
+        font-weight: 600;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 60%;
+      }
+
+      p {
+        color: #c7c7c7;
+        font-size: .9em;
+        font-weight: 500;
+        text-align: center;
+        padding: 0 25%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 75%;
+      }
+    }
+
+
     .funding {
       grid-row: 1 / 2;
       grid-column: 2 / 3;
 
       background-color: #fff;
+
+      box-shadow: -15px 0 30px 0 rgba(200, 215, 232, 0.4);
 
       .title {
         background-color: #bde5de;

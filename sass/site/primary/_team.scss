@@ -119,48 +119,45 @@
         line-height: 1em;
       }
     }
-
   }
+}
 
-  .focus-areas {
+.focus-areas {
 
-    margin-top: 2em;
+  margin-top: 2em;
 
-    .focus-areas-list {
+  .focus-areas-list {
+    
+    display: flex;
+    align-items: flex-start;
+
+    .profile-tag {
       
       display: flex;
-      align-items: flex-start;
+      align-items: center;
 
-      .profile-tag {
-        
-        display: flex;
-        align-items: center;
+      border: 2px solid #9ea0a2;
+      border-radius: 2.4em;
 
-        border: 2px solid #9ea0a2;
-        border-radius: 2.4em;
+      color: #9ea0a2;
 
-        color: #9ea0a2;
+      font-weight: 600;
 
-        font-weight: 600;
+      margin-bottom: 2em;
+      margin-right: 2em;
 
-        margin-bottom: 2em;
-        margin-right: 2em;
+      padding: .65em 1.5em .8em;
 
-        padding: .65em 1.5em .8em;
+      width: auto;
 
-        width: auto;
-
-        img {
-          margin-right: 8px;
-          margin-top: 3px;
-        }
-      }
-
-      .profile-tag-add {
-        border: 2px dashed #a3a3a3;
+      img {
+        margin-right: 8px;
+        margin-top: 3px;
       }
     }
 
+    .profile-tag-add {
+      border: 2px dashed #a3a3a3;
+    }
   }
 }
-  
