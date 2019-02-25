@@ -1,0 +1,120 @@
+/* The styles for the Create Your Team page. */
+
+.create-team {
+
+  h3 {
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 700;
+
+    margin: 2em 0 2em 1em;
+
+    span {
+      color: #b8bbbd;
+      font-size: .7em;
+      font-weight: 500;
+      display: inline-block;
+      margin-left: 8px;
+    }
+  }
+  
+  .about-team {
+    display: grid;
+    
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 3.5fr;
+
+    .profile-photo {
+      grid-column: 1 / 2;
+      align-self: center;
+    }
+
+    .form-elements {
+      grid-column: 2 / 3;
+      margin: 0 2em 0 0;
+
+      .button-bar {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .team-members {
+  }
+
+  .members-list {
+    display: grid;
+
+    grid-gap: 2em 1em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    margin-top: 3em;
+
+    .member-info {
+      text-align: center;
+      padding-right: 2em;
+
+      h4 {
+        color: #616364;
+        font-size: 1.4em;
+        font-weight: 500;
+        margin: .5em 0 0;
+      }
+
+      span {
+        color: #c0c3c6;
+        font-size: 1em;
+        font-weight: 700;
+      }
+    }
+
+  }
+
+  .achievements  {
+
+    .add-achievement {
+
+      border: 2px dashed #aeaeae;
+      color: #adadad;
+      text-align: center;
+
+      border-radius: 1.2em;
+
+      min-height: 248px;
+      max-width: 340px;
+
+      position: relative;
+      margin-left: 1.5em;
+
+      .add-icon {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        font-size: 2em;
+        font-weight: 500;
+        line-height: 55%;
+        border: 1px solid #adadad;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+      }
+
+      h3 {
+        color: #adadad;
+        font-size: 1.2em;
+        font-weight: 600;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 60%;
+        margin: 0;
+      }
+    }
+  }
+
+  .focus-areas {
+    .focus-areas-list {
+      padding-left: 1.5em;
+    }
+  }
+}
