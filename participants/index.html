@@ -40,9 +40,9 @@
         <aside role="complementary" class="nav-sidebar">
           <nav role="navigation" class="secondary-nav">
             <a href="#"><img src="img/nav/s_dashboard.png" alt="Dashboard"> Dashboard </a>
-            <a href="#"><img src="img/nav/s_ideas.png" alt="Ideas"> Ideas </a>
-            <a href="#"><img src="img/nav/s_team.png" alt="Teams"> Teams </a>
-            <a class="active" href="#"><img src="img/nav/s_participants.png" alt="Participants"> Participants </a>
+            <a href="ideas/index.html"><img src="img/nav/s_ideas.png" alt="Ideas"> Ideas </a>
+            <a href="teams/index.html"><img src="img/nav/s_team.png" alt="Teams"> Teams </a>
+            <a class="active" href="participants/index.html"><img src="img/nav/s_participants.png" alt="Participants"> Participants </a>
           </nav>
         </aside>
 
@@ -52,7 +52,7 @@
             <img class="search-button" src="img/ico/search.png" alt="Go" />
           </div>
 
-          <button type="button" class="button action-submit-idea">Invite Members</button>
+          <button id="invite-members" type="button" class="button action-submit-idea">Invite Members</button>
 
           <button type="button" class="button button-clear action-map-view">Map View</button>
 
@@ -141,6 +141,7 @@
     </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js" integrity="sha256-P93G0oq6PBPWTP1IR8Mz/0jHHUpaWL0aBJTKauisG7Q=" crossorigin="anonymous"></script>
     <script src="js/scripts.js" media="all"></script>
 
 <div id="filters" class="popup">
@@ -177,9 +178,25 @@
 </div>
 
 
-<div id="invite-members" class="popup">
+<div id="invite-members-popup" class="popup mfp-hide">
+
+  <div class="popup-content">
+    <h3>Invite Members</h3>
+
+    <div class="idea-form">
+      <div class="form-elements">
+        <input type="text" class="form-text" name="email" size="20" placeholder="E-mail address" tabindex="1" />
+        <textarea class="idea-textarea" rows="8" cols="60">Write a message</textarea>
+
+        <div class="button-bar">
+          <button id="invite-popup-close" type="button" class="button button-bar-item button-done">Invite</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
+
 
 </body>
 </html>
