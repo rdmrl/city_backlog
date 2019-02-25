@@ -24,14 +24,34 @@
     grid-template-rows: auto;
     grid-template-columns: 1fr 3.5fr;
 
+    @include media("<=phones") { /* <=640 */
+      grid-template-columns: auto;
+    }
+
     .profile-photo {
       grid-column: 1 / 2;
       align-self: center;
+      padding-right: 1em;
+
+      @include media("<=phones") { /* <=640 */
+        grid-row: 1 / 2;
+        margin: 1em auto;
+      }
+
+      img {
+        display: inline-block;
+        margin: 0 auto;
+      }
     }
 
     .form-elements {
       grid-column: 2 / 3;
       margin: 0 2em 0 0;
+
+      @include media("<=phones") { /* <=640 */
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+      }
 
       .button-bar {
         margin-bottom: 0;
@@ -48,6 +68,10 @@
     grid-gap: 2em 1em;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
+    @include media("<=phones") { /* <=640 */
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
     margin-top: 3em;
 
     .member-info {
@@ -59,6 +83,10 @@
         font-size: 1.4em;
         font-weight: 500;
         margin: .5em 0 0;
+        @include media("<=phones") { /* <=640 */
+          font-size: 1.1em;
+          font-weight: 400;
+        }
       }
 
       span {
@@ -71,6 +99,9 @@
   }
 
   .achievements  {
+    @include media("<=phones") { /* <=640 */
+      padding: 0 1em;
+    }
 
     .add-achievement {
 
@@ -85,6 +116,9 @@
 
       position: relative;
       margin-left: 1.5em;
+      @include media("<=phones") { /* <=640 */
+        margin-left: 0;
+      }
 
       .add-icon {
         position: absolute;
@@ -97,6 +131,7 @@
         width: 30px;
         height: 30px;
         border-radius: 15px;
+        cursor: pointer;
       }
 
       h3 {
@@ -113,8 +148,107 @@
   }
 
   .focus-areas {
+    @include media("<=phones") { /* <=640 */
+      padding: 0 1em;
+    }
     .focus-areas-list {
       padding-left: 1.5em;
+      @include media("<=phones") { /* <=640 */
+        padding-left: 0;
+      }
+    }
+  }
+
+  #add-focus-area {
+    cursor: pointer;
+  }
+}
+
+.create-team-popup {
+  h3 {
+    color: #adadad;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0 0 1em;
+  }
+
+  .search-bar {
+    margin-left: 0;
+    @include media("<=phones") { /* <=640 */
+      margin-bottom: 1em;
+    }
+
+    .search-container {
+      background-color: #fff;
+      box-shadow: 0 0 28px 0 rgba(204, 204, 204, 0.5);
+      color: #adadad;
+      @include media("<=phones-2x") { /* <=768 */
+        flex-basis: 100%;
+      }
+
+      .search-field {
+        color: #999;
+      }
+
+    .search-field::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #999;
+    }
+
+    .search-field::-moz-placeholder { /* Firefox 19+ */
+      color: #999;
+    }
+    .search-field:-ms-input-placeholder { /* IE 10+ */
+      color: #999;
+    }
+    .search-field:-moz-placeholder { /* Firefox 18- */
+      color: #999;
+    }
+
+    }
+  }
+
+  .participants-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    
+    .participant {
+      padding-bottom: 1em;
+    }
+  }
+
+}
+
+.create-focus-popup {
+  h3 {
+    color: #adadad;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0 0 1em;
+  }
+
+  .focus-area-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+
+    button {
+      background-color: transparent;
+      border: 2px solid #aeaeae;
+      color: #aeaeae;
+      margin-top: .5em;
+      margin-bottom: 2em;
+
+      flex-basis: 25%;
+      @include media("<=phones") { /* <=640 */
+        flex-basis: 60%;
+      }
+    }
+
+    .selected {
+      border: 2px solid #46b3ba;
+      color: #46b3ba;
     }
   }
 }
+

@@ -137,3 +137,10 @@
     }
   }
 }
+
+#add-member-popup {
+  width: 70%;
+  @include media("<=phones") { /* <=640 */
+    width: 96%;
+  }
+}
