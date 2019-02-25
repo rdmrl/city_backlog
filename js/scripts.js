@@ -17,7 +17,7 @@
       // If the location.hash matches one of the links, use that as the active tab.
       // If no match is found, use the first link as the initial active tab.
       $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
-      $active.addClass('active');
+      $active.parent().addClass('active');
 
       $content = $($active[0].hash);
 
@@ -29,7 +29,7 @@
       // Bind the click event handler
       $(this).on('click', 'a', function(e){
         // Make the old tab inactive.
-        $active.removeClass('active');
+        $active.parent().removeClass('active');
         $content.hide();
 
         // Update the variables with the new link and content
@@ -37,7 +37,7 @@
         $content = $(this.hash);
 
         // Make the tab active.
-        $active.addClass('active');
+        $active.parent().addClass('active');
         $content.show();
 
         // Prevent the anchor's default click action
@@ -100,6 +100,36 @@
         window.location.href = 'http://ec2-13-127-219-5.ap-south-1.compute.amazonaws.com/city_backlog/ideas/map_view.html';
       });
     }
+
+    if (el.inviteButton) {
+      // Invite team members popup
+      
+      el.inviteButton.on('click', function () {
+        showInviteMembersPopup();
+      });
+    }
+
+    if (el.inviteDoneButton) {
+      el.inviteDoneButton.on('click', function () {
+        el.inviteButton.magnificPopup('close');
+      });
+    }
+  };
+
+  var showInviteMembersPopup = function () {
+    el.inviteButton.magnificPopup('open');
+  };
+
+  var initPopups = function () {
+    if (el.inviteButton) {
+      el.inviteButton.magnificPopup({
+        items: {
+          src: '#invite-members-popup',
+          type: 'inline'
+        },
+        modal: true
+      });
+    }
   };
 
   var clearAllFilters = function () {
@@ -114,11 +144,15 @@
     el.clearButton = $('#clear_all_filters');
 
     el.mapViewButton = $('#action-map-view');
+
+    el.inviteButton = $('#invite-members');
+    el.inviteDoneButton = $('#invite-popup-close');
   };
 
   cityBacklog.init = function () {
     doLookups();
     initHandlers();
+    initPopups();
   };
 
 }(window.cityBacklog = window.cityBacklog || {}, jQuery));
