@@ -6,6 +6,10 @@
     padding: 3em;
     margin-bottom: 4.5em;
 
+    @include media("<=phones-2x") { /* <=768 */
+      padding: 1em;
+    }
+
     h3 {
       color: #46b3ba;
     }
@@ -28,6 +32,9 @@
     border-width: 0 0 1px 0;
     padding: 1em;
     width: 100%;
+    @include media("<=phones") { /* <=640 */
+      padding: 1em 1em .5em;
+    }
   }
 
   .idea-textarea {
@@ -50,6 +57,9 @@
 
   .form-elements {
     margin: 2em 4em 1.5em 0;
+    @include media("<=phones-2x") { /* <=768 */
+      margin: 1em 1em 1em 0;
+    }
   }
 
   .button-bar {
@@ -88,9 +98,18 @@
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
 
+  @include media("<=phones") { /* <=640 */
+    grid-gap: 1em;
+  }
 
   .form-email {
     grid-column: 1 / 3;
     width: 65%;
+  }
+}
+
+.personal-contact .form-elements {
+  @include media("<=phones") { /* <=640 */
+    grid-template-columns: 1fr;
   }
 }

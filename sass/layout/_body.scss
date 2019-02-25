@@ -62,6 +62,8 @@ body {
     grid-column: content;
     padding-right: 112px;
 
+    padding-bottom: 4em;
+
     @include media("<=tablets") { /* 1366 */
       padding-right: 80px;
     }
@@ -92,6 +94,27 @@ body {
 
 body.page-participant-profile .wrapper {
   margin-top: 60px;
+}
+
+body.page-no-search-bar .wrapper {
+  margin-top: 0px;
+}
+
+body.page-no-search-bar main {
+  margin-top: 5em;
+
+  @include media("<=tablets") { /* <=1600 */
+    margin-top: 3em;
+  }
+  @include media("<=desktop") { /* <=1366 */
+    margin-top: 1em;
+  }
+  @include media("<=phones-2x") { /* <=768 */
+    margin-top: 1em;
+  }
+  @include media("<=phones") { /* <=640 */
+    margin-top: 10px;
+  }
 }
 
   @include media(">tablets") { /* >1600 */

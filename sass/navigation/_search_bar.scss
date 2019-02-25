@@ -208,7 +208,8 @@
     }
     @include media("<=phones") { /* <=640 */
       flex-basis: 28%;
-      margin-top: 5px;
+      margin-top: 0;
+      padding: .75em .5em;
     }
   }
 

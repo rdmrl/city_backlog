@@ -41,12 +41,21 @@
   grid-template-rows: [info] auto [social] auto [skills] auto [teams] auto [rows-end];
   grid-template-columns: [tags] 1fr [content] 2fr [gutter] 1px [cols-end];
 
+  @include media("<=phones-2x") { /* <=768 */
+    grid-template-rows: [info] auto [social] auto [skills] auto [teams] auto [tags] auto [rows-end];
+    grid-template-columns: [content] 1fr [cols-end];
+  }
+
   .profile-info {
     position: relative;
 
     grid-gap: 3em;
     grid-row: info / social;
     grid-column: tags / cols-end;
+
+    @include media("<=phones-2x") { /* <=768 */
+      grid-column: content / cols-end;
+    }
 
     display: grid;
     font-size: 1.1em;
@@ -103,6 +112,14 @@
     border-radius: .75em;
     padding: 1.5em 3.5em;
     margin-bottom: 2.5em;
+
+    @include media("<=desktop-old") { /* <=1024 */
+      padding: 1em 1.5em;
+    }
+    @include media("<=phones-2x") { /* <=768 */
+      padding: 1em 1.5em;
+      margin-bottom: 1em;
+    }
   }
 
   h3 {
@@ -113,14 +130,28 @@
     grid-row: social / skills;
     grid-column: content / gutter;
 
+    @include media("<=phones-2x") { /* <=768 */
+      grid-column: content / cols-end;
+    }
+
     .social-logo {
       margin: 0 5em 1em 0;
+      @include media("<=phones") { /* <=640 */
+        margin: 0 2em 1em 0;
+      }
     }
   }
 
   .technical-skills {
     grid-row: skills / teams;
     grid-column: content / gutter;
+
+    @include media("<=phones-2x") { /* <=768 */
+      grid-column: content / cols-end;
+    }
+    @include media("<=phones") { /* <=640 */
+      padding: 1em;
+    }
 
     .skill-item {
       display: grid;
@@ -130,6 +161,14 @@
       grid-template-columns: [icon] 40px [skill] 70% [year] 20% [cols-end];
 
       margin-bottom: 1.5em;
+
+      @include media("<=desktop-old") { /* <=1024 */
+        grid-template-columns: [icon] 40px [skill] 60% [year] 30% [cols-end];
+      }
+      @include media("<=phones") { /* <=640 */
+        grid-template-columns: [icon] 30px [skill] 58% [year] 30% [cols-end];
+        grid-gap: .5em;
+      }
 
       .skill-icon {
         grid-column: icon / skill;
@@ -166,7 +205,15 @@
     grid-row: teams / rows-end;
     grid-column: content / gutter;
 
-    .teams-list {
+    @include media("<=phones-2x") { /* <=768 */
+      grid-row: teams / tags;
+      grid-column: content / cols-end;
+    }
+    @include media("<=phones") { /* <=640 */
+      padding: 1em;
+    }
+
+    .part-teams-list {
 
       display: flex;
       flex-direction: row;
@@ -181,18 +228,29 @@
         grid-template-rows: [type] auto [content] auto [rows-end];
         grid-template-columns: [logo] 20% [content] 80% [cols-end];
 
+        @include media("<=phones") { /* <=640 */
+          grid-template-rows: [type] auto [logo] auto [content] auto [rows-end];
+          grid-template-columns: [content] auto [cols-end];
+        }
+
         .team-type {
           color: #a3a3a3;
           font-weight: 600;
 
           grid-row: type / content;
           grid-column: content;
+          @include media("<=phones") { /* <=640 */
+            grid-row: type / logo;
+          }
         }
 
         .team-details {
 
           grid-row: content / rows-end;
           grid-column: content;
+          @include media("<=phones") { /* <=640 */
+            grid-column: content;
+          }
 
           h5 {
             color: #a3a3a3;
@@ -202,6 +260,10 @@
         .logo {
           grid-row: content / rows-end;
           grid-column: logo;
+          @include media("<=phones") { /* <=640 */
+            grid-row: logo / content;
+            grid-column: content;
+          }
         }
 
         h4 {
@@ -226,7 +288,6 @@
           font-weight: 500;
           margin-bottom: .5em;
         }
-
       }
     }
   }
@@ -234,6 +295,11 @@
   .tags {
     grid-row: social / skills;
     grid-column: tags / content;
+
+    @include media("<=phones-2x") { /* <=768 */
+      grid-row: tags / rows-end;
+      grid-column: content / cols-end;
+    }
 
     display: flex;
     flex-direction: column;

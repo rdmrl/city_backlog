@@ -108,10 +108,20 @@
   width: 60%;
   margin: 0 auto;
 
+  @include media("<=desktop-old") { /* <=1024 */
+    width: 80%;
+  }
+  @include media("<=phones") { /* <=640 */
+    width: 96%;
+  }
+
   .popup-content {
     border-radius: 1em;
     background-color: #fff;
     padding: 3em;
+    @include media("<=phones-2x") { /* <=768 */
+      padding: 1em;
+    }
   }
 
   .form-elements {

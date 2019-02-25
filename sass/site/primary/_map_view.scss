@@ -10,13 +10,36 @@
 
   min-height: 800px;
 
+  @include media("<=desktop-old") { /* <=1024 */
+    min-height: 650px;
+  }
+  @include media("<=phones-2x") { /* <=768 */
+    min-height: 550px;
+  }
+  @include media("<=phones") { /* <=640 */
+    grid-template-rows: [map] auto [ideas] auto [location] auto [rows-end];
+    grid-template-columns: [map] 1fr [cols-end];
+  }
+
   .map {
     grid-row: map / ideas;
     grid-column: map / location;
+    @include media("<=phones") { /* <=640 */
+      grid-row: map / location;
+      grid-column: map / cols-end;
+    }
 
     img {
       margin-left: -80px;
       margin-top: -60px;
+      @include media("<=desktop-old") { /* <=1024 */
+        margin-left: -40px;
+        margin-top: -40px;
+      }
+      @include media("<=phones") { /* <=640 */
+        margin-left: 0;
+        margin-top: 0;
+      }
     }
   }
 
@@ -25,6 +48,16 @@
     grid-column: location / cols-end;
     align-self: center;
     margin-left: -20px;
+
+    @include media("<=phones-2x") { /* <=768 */
+      margin-left: -30px;
+    }
+    @include media("<=phones") { /* <=640 */
+      margin-left: 0;
+      grid-row: location / rows-end;
+      grid-column: map / cols-end;
+      margin-bottom: 2em;
+    }
 
     h4 {
       color: #c6c9cb;
@@ -40,6 +73,14 @@
       border-radius: 1.5em;
       padding: 1.2em 2.2em;
       width: 75%;
+      @include media("<=desktop-old") { /* <=1024 */
+        padding: 1em 1.5em;
+        width: 90%;
+      }
+      @include media("<=phones-2x") { /* <=768 */
+        padding: 1em;
+        width: 100%;
+      }
 
       dt {
         color: #c6c9cb;
@@ -52,6 +93,12 @@
         font-weight: 600;
         margin-left: 0;
         margin-right: 0;
+        @include media("<=desktop-old") { /* <=1024 */
+          font-size: 1em;
+        }
+        @include media("<=phones") { /* <=640 */
+          margin-bottom: .5em;
+        }
       }
     }
   }
@@ -60,6 +107,13 @@
     grid-row: ideas / rows-end;
     grid-column: map / cols-end;
     margin-top: -120px;
+
+    @include media("<=phones") { /* <=640 */
+      margin-left: 0;
+      grid-row: ideas / location;
+      grid-column: map / cols-end;
+      margin: 2em 0;
+    }
 
     h4 {
       color: #9a9d9f;
@@ -84,5 +138,17 @@
       }
     }
   }
-
 }
+
+  @include media(">tablets") { /* >1600 */
+  }
+  @include media("<=tablets") { /* <=1600 */
+  }
+  @include media("<=desktop") { /* <=1366 */
+  }
+  @include media("<=desktop-old") { /* <=1024 */
+  }
+  @include media("<=phones-2x") { /* <=768 */
+  }
+  @include media("<=phones") { /* <=640 */
+  }

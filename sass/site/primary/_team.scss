@@ -13,6 +13,12 @@
     font-size: 1.5em;
     font-weight: 600;
     margin-bottom: 2em;
+    @include media("<=phones-2x") { /* <=768 */
+      margin-top: 2em;
+    }
+    @include media("<=phones") { /* <=640 */
+      margin-top: 0;
+    }
 
     span {
       color: #b8bbbd;
@@ -31,6 +37,13 @@
 
     padding: 3em 2em;
 
+    @include media("<=phones-2x") { /* <=768 */
+      grid-template-columns: [logo] 1fr [content] 2fr [cols-end];
+    }
+    @include media("<=phones") { /* <=640 */
+      grid-template-columns: [logo] auto [content];
+    }
+
     .logo {
       grid-column: logo / content;
       justify-self: center;
@@ -47,6 +60,12 @@
 
     .description {
       grid-column: content / image;
+      @include media("<=phones-2x") { /* <=768 */
+        grid-column: content / cols-end;
+      }
+      @include media("<=phones") { /* <=640 */
+        grid-column: logo / content;
+      }
 
       p {
         color: #a3a3a3;
@@ -59,22 +78,39 @@
       grid-column: image / cols-end;
       justify-self: center;
       align-self: center;
+
+      @include media("<=phones-2x") { /* <=768 */
+        grid-column: image / content;
+      }
+      @include media("<=phones") { /* <=640 */
+        grid-column: logo / content;
+      }
     }
   }
 
   .team-members {
     
     padding: 2em;
+    @include media("<=phones") { /* <=640 */
+      padding: 1em;
+      margin-bottom: 2em;
+    }
 
     .members-list {
       display: grid;
 
       grid-gap: 2em;
       grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      @include media("<=phones-2x") { /* <=768 */
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
 
       .member {
         text-align: center;
         margin-right: 60px;
+        @include media("<=phones-2x") { /* <=768 */
+          margin-right: 20px;
+        }
 
         h4 {
           color: #000;
@@ -99,10 +135,24 @@
 
     grid-gap: 2em;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    @include media("<=phones-2x") { /* <=768 */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    @include media("<=phones") { /* <=640 */
+      padding: 1em;
+    }
 
     .achievement {
       text-align: center;
       margin-right: 80px;
+      @include media("<=phones-2x") { /* <=768 */
+        margin-right: 80px;
+        margin-top: 40px;
+      }
+      @include media("<=phones") { /* <=640 */
+        margin: 1em auto;
+      }
 
       h4 {
         color: #000;
@@ -110,6 +160,9 @@
         font-weight: 600;
         margin: 1em 3em .4em;
         line-height: 1.2;
+        @include media("<=phones-2x") { /* <=768 */
+          margin: 1em 0 .4em;
+        }
       }
 
       span {
@@ -125,11 +178,16 @@
 .focus-areas {
 
   margin-top: 2em;
+  @include media("<=phones") { /* <=640 */
+    padding: 1em;
+    margin-top: 1em;
+  }
 
   .focus-areas-list {
     
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 
     .profile-tag {
       
