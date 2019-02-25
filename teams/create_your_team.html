@@ -17,7 +17,7 @@
     <!-- Include the HTML5 shiv print polyfill for Internet Explorer browsers 8 and below -->
     <!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
 </head>
-<body class="page-participant-profile">
+<body class="page-no-search-bar">
 
     <header class="site-header">
 
@@ -80,43 +80,43 @@
               <div class="members-list">
                   
                 <div class="member-info">
-                  <img src="img/team/add_team_member.png" alt="Add Member" />
+                  <img id="create-team-add-member" onclick="cityBacklog.showAddMemberPopup();" src="img/team/add_team_member.png" alt="Add Member" />
                   <h4>Add Members</h4>
                   <span>Add or Remove</span>
                 </div>
 
                 <div class="member-info">
-                  <img src="img/team/add_team_member.png" alt="Add Member" />
+                  <img onclick="cityBacklog.showAddMemberPopup();" src="img/team/add_team_member.png" alt="Add Member" />
                   <h4>Add Members</h4>
                   <span>Add or Remove</span>
                 </div>
 
                 <div class="member-info">
-                  <img src="img/team/add_team_member.png" alt="Add Member" />
+                  <img onclick="cityBacklog.showAddMemberPopup();" src="img/team/add_team_member.png" alt="Add Member" />
                   <h4>Add Members</h4>
                   <span>Add or Remove</span>
                 </div>
 
                 <div class="member-info">
-                  <img src="img/team/add_team_member.png" alt="Add Member" />
+                  <img onclick="cityBacklog.showAddMemberPopup();" src="img/team/add_team_member.png" alt="Add Member" />
                   <h4>Add Members</h4>
                   <span>Add or Remove</span>
                 </div>
 
                 <div class="member-info">
-                  <img src="img/team/add_team_member.png" alt="Add Member" />
+                  <img onclick="cityBacklog.showAddMemberPopup();" src="img/team/add_team_member.png" alt="Add Member" />
                   <h4>Add Members</h4>
                   <span>Add or Remove</span>
                 </div>
 
                 <div class="member-info">
-                  <img src="img/team/add_team_member.png" alt="Add Member" />
+                  <img onclick="cityBacklog.showAddMemberPopup();" src="img/team/add_team_member.png" alt="Add Member" />
                   <h4>Add Members</h4>
                   <span>Add or Remove</span>
                 </div>
 
                 <div class="member-info">
-                  <img src="img/team/add_team_member.png" alt="Add Member" />
+                  <img onclick="cityBacklog.showAddMemberPopup();" src="img/team/add_team_member.png" alt="Add Member" />
                   <h4>Add Members</h4>
                   <span>Add or Remove</span>
                 </div>
@@ -130,7 +130,7 @@
               <h3>Achievements <span>Edit</span></h3>
 
               <div class="add-achievement">
-                <div class="add-icon">&#43;</div>
+                <div id="add-achievement" class="add-icon">&#43;</div>
                 <h3>Add Achievement</h3>
               </div>
 
@@ -141,7 +141,7 @@
               <h3>Interested Focus Area <span>Edit</span></h3>
 
               <div class="focus-areas-list">
-                <span class="profile-tag profile-tag-add"> Add Skills or Focus Area </span>
+                <span id="add-focus-area" class="profile-tag profile-tag-add"> Add Skills or Focus Area </span>
               </div>
 
             </section>
@@ -151,5 +151,147 @@
         </main>
 
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js" integrity="sha256-P93G0oq6PBPWTP1IR8Mz/0jHHUpaWL0aBJTKauisG7Q=" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+
+<div id="add-achievement-popup" class="create-team-popup popup mfp-hide">
+  <div class="popup-content create-team">
+    <h3>Add Achievements</h3>
+
+    <div class="about-team content-box idea-form">
+
+      <div class="profile-photo">
+        <img src="img/team/add_photo.png" alt="Add a Photo" />
+      </div>
+
+      <div class="form-elements">
+        <input type="text" class="form-text" placeholder="Name" name="name" tabindex="1" />
+
+        <textarea class="idea-textarea" name="description" rows="5" cols="60">Write a brief description about the achievement.</textarea>
+        
+        <div class="button-bar">
+          <button id="add-achievement-done" type="button" class="button-bar-item button button-done">Done</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div id="add-focus-area-popup" class="create-focus-popup popup mfp-hide">
+  <div class="popup-content create-team idea-form">
+    <h3>Add Focus Area</h3>
+
+    <div class="focus-area-list">
+      <button id="focus_education" type="button" class="button action-filter selected">Education</button>
+      <button id="focus_workforce" type="button" class="button action-filter selected">Workforce</button>
+      <button id="focus_transportation" type="button" class="button action-filter">Transportation</button>
+      <button id="focus_public_safety" type="button" class="button action-filter">Public Safety</button>
+      <button id="focus_housing" type="button" class="button action-filter">Housing</button>
+      <button id="focus_health" type="button" class="button action-filter selected">Health</button>
+    </div>
+
+    <div class="form-elements">
+      <div class="button-bar">
+        <button id="add-focus-area-done" type="button" class="button-bar-item button button-done">Done</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="add-member-popup" class="create-team-popup popup mfp-hide">
+  <div class="popup-content create-team idea-form">
+
+    <h3>Add Members</h3>
+
+      <div class="search-bar">
+        <div class="search-container">
+          <input type="text" class="search-field" placeholder="Search members" name="search">
+          <img class="search-button" src="img/ico/search.png" alt="Go" />
+        </div>
+      </div>
+
+      <section class="participants-list">
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+
+        <article class="participant">
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><img src="img/participants/profile_img.jpg" alt="Karla Brooks - Manager" /></a>
+          <a target="_blank" href="participants/karla_brooks.html" title="Click to view participant profile."><h2>Karla Brooks</h2></a>
+          <h3>Manager</h3>
+        </article>
+      </section>
+
+      <div class="form-elements">
+        <div class="button-bar">
+          <button id="add-member-done" type="button" class="button-bar-item button button-done">Done</button>
+        </div>
+      </div>
+
+  </div>
+
+</div>
+
 </body>
 </html>
