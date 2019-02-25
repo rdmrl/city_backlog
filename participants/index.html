@@ -19,13 +19,13 @@
 </head>
 <body>
 
-    <header role="banner" class="site-header">
+    <header class="site-header">
 
         <div class="site-branding">
             <a href="/"><img src="img/id/cb_logo.png" alt="City Backlog" /></a>
         </div>
 
-        <nav role="navigation" class="primary-nav">
+        <nav class="primary-nav">
             <a href="#" class="nav-discussion"><img src="img/nav/n_discuss.png" alt="Discussion" /></a>
             <a href="#" class="nav-notifications"><img src="img/nav/n_notif.png" alt="Notifications" /></a>
             <a href="#" class="nav-help"><img src="img/nav/n_help.png" alt="Help" /></a>
@@ -37,8 +37,8 @@
 
     <div id="page" class="wrapper">
 
-        <aside role="complementary" class="nav-sidebar">
-          <nav role="navigation" class="secondary-nav">
+        <aside class="nav-sidebar">
+          <nav class="secondary-nav">
             <a href="#"><img src="img/nav/s_dashboard.png" alt="Dashboard"> Dashboard </a>
             <a href="ideas/index.html"><img src="img/nav/s_ideas.png" alt="Ideas"> Ideas </a>
             <a href="teams/index.html"><img src="img/nav/s_team.png" alt="Teams"> Teams </a>
@@ -46,7 +46,7 @@
           </nav>
         </aside>
 
-        <aside role="complementary" class="search-bar">
+        <aside class="search-bar">
           <div class="search-container">
             <input type="text" class="search-field" placeholder="Search teams" name="search">
             <img class="search-button" src="img/ico/search.png" alt="Go" />
@@ -61,7 +61,7 @@
           <button id="action-filter" type="button" class="button button-clear action-filter"><img src="img/ico/filter.png" alt="Filter" /> Filter <img class="filter-caret" src="img/nav/n_arrow.png" alt="down arrow" /></button>
         </aside>
 
-        <main role="main">
+        <main>
 
           <header>
             <h1>Participants</h1>
@@ -142,38 +142,38 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js" integrity="sha256-P93G0oq6PBPWTP1IR8Mz/0jHHUpaWL0aBJTKauisG7Q=" crossorigin="anonymous"></script>
-    <script src="js/scripts.js" media="all"></script>
+    <script src="js/scripts.js"></script>
 
 <div id="filters" class="popup">
 
   <h3>Focus Area</h3>
-  <section class="filter-container">
+  <div class="filter-container">
     <button id="focus_education" type="button" class="button action-filter selected">Education</button>
     <button id="focus_workforce" type="button" class="button action-filter selected">Workforce</button>
     <button id="focus_transportation" type="button" class="button action-filter">Transportation</button>
     <button id="focus_public_safety" type="button" class="button action-filter">Public Safety</button>
     <button id="focus_housing" type="button" class="button action-filter">Housing</button>
     <button id="focus_health" type="button" class="button action-filter selected">Health</button>
-  </section>
+  </div>
 
   <h3>Community</h3>
-  <section class="filter-container">
+  <div class="filter-container">
     <button id="community_west_baltimore" type="button" class="button action-filter selected">West Baltimore</button>
     <button id="community_east_baltimore" type="button" class="button action-filter selected">East Baltimore</button>
-  </section>
+  </div>
 
   <h3>Stage</h3>
-  <section class="filter-container">
+  <div class="filter-container">
     <button id="stage_submitted" type="button" class="button action-filter selected">Submitted</button>
     <button id="stage_vetted" type="button" class="button action-filter">Vetted</button>
     <button id="stage_funded" type="button" class="button action-filter">Funded</button>
     <button id="stage_awarded" type="button" class="button action-filter">Awarded</button>
-  </section>
+  </div>
 
-  <section class="filter-container filter-controls">
+  <div class="filter-container filter-controls">
     <button id="close_filters" type="button" class="button action-close">Done</button>
     <button id="clear_all_filters" type="button" class="button cancel-button action-clear">Clear all</button>
-  </section>
+  </div>
 
 </div>
 
@@ -196,7 +196,6 @@
   </div>
 
 </div>
-
 
 </body>
 </html>

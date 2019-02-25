@@ -19,13 +19,13 @@
 </head>
 <body class="page-participant-profile">
 
-    <header role="banner" class="site-header">
+    <header class="site-header">
 
         <div class="site-branding">
             <a href="/"><img src="img/id/cb_logo.png" alt="City Backlog" /></a>
         </div>
 
-        <nav role="navigation" class="primary-nav">
+        <nav class="primary-nav">
             <a href="#" class="nav-discussion"><img src="img/nav/n_discuss.png" alt="Discussion" /></a>
             <a href="#" class="nav-notifications"><img src="img/nav/n_notif.png" alt="Notifications" /></a>
             <a href="#" class="nav-help"><img src="img/nav/n_help.png" alt="Help" /></a>
@@ -37,8 +37,8 @@
 
     <div id="page" class="wrapper">
 
-        <aside role="complementary" class="nav-sidebar">
-          <nav role="navigation" class="secondary-nav">
+        <aside class="nav-sidebar">
+          <nav class="secondary-nav">
             <a href="#"><img src="img/nav/s_dashboard.png" alt="Dashboard"> Dashboard </a>
             <a href="ideas/index.html"><img src="img/nav/s_ideas.png" alt="Ideas"> Ideas </a>
             <a class="active" href="teams/index.html"><img src="img/nav/s_team.png" alt="Teams"> Teams </a>
@@ -46,7 +46,7 @@
           </nav>
         </aside>
 
-        <main role="main">
+        <main>
 
           <article class="idea-details">
 
@@ -112,7 +112,7 @@
               </section>
 
 
-              <section class="idea-status">
+              <div class="idea-status">
 
                 <div class="status-item right-border">
                   <img src="img/ico/page.png" alt="Page icon" />
@@ -142,7 +142,7 @@
                   View on GitHub
                 </div>
 
-              </section>
+              </div>
 
               <section class="time-line">
 
@@ -162,7 +162,7 @@
 
               </section>
 
-              <section class="idea-content">
+              <div class="idea-content">
 
                 <div class="tabs">
 
@@ -265,6 +265,7 @@
                         <li class="location-3"> <strong>550</strong>
                           <span>Allendale, Baltimore</span>
                         </li>
+                      </ul>
                     </div>
 
                     <div class="text">
@@ -326,7 +327,7 @@
                   </div>
                 </div>
 
-              </section>
+              </div>
 
               <section class="idea-comments">
 
@@ -375,13 +376,11 @@
 
             </article>
 
-          </section>
-
         </main>
 
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/scripts.js" media="all"></script>
+    <script src="js/scripts.js"></script>
 <script>
 cityBacklog.initTabs();
 </script>
