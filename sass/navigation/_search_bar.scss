@@ -193,7 +193,8 @@
   }
 
   .action-map-view {
-    flex-basis: 8%;
+    flex-basis: 12%;
+    padding: 1em 1.5em;
     @include media("<=tablets") { /* <=1600 */
     }
     @include media("<=desktop") { /* <=1366 */
@@ -253,4 +254,12 @@
 .showing-filters {
   background-color: #69bfc2 !important;
   border-radius: 0 .9em 0 0 !important;
+}
+
+.active-search-button {
+  background-color: #69bfc2 !important;
+  border-top-right-radius: .9em !important;
+  border-top-left-radius: .9em !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
